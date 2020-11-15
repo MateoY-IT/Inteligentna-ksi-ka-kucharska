@@ -10,6 +10,6 @@ Główne funkcjonalności:
 - wyszukiwanie przepisów po dostępnych produktach
 - pobieranie aktualnie zalogowanego użytkownika 
 - zaczytywanie przepisów z bazy danych
-- opcja dodania przepisów 
+- opcja dodania i usuwania przepisów (własnych)
 - możliwość edycji zapisanych wcześniej przepisów
 
