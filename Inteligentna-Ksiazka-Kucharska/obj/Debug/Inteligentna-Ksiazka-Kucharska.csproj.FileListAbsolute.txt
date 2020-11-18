@@ -1,0 +1,5 @@
+C:\Users\brand\source\repos\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.csprojAssemblyReference.cache
+C:\Users\brand\source\repos\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Properties.Resources.resources
+C:\Users\brand\source\repos\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Splash.resources
+C:\Users\brand\source\repos\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.csproj.GenerateResource.cache
+C:\Users\brand\source\repos\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.csproj.CoreCompileInputs.cache
