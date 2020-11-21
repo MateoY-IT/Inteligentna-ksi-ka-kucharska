@@ -14,3 +14,6 @@ Główne funkcjonalności:
 - możliwość edycji zapisanych wcześniej przepisów
 - dodawanie zdjęć do przepisów
 - obliczanie kaloryczności
+- lista zakupów
+- timer(multitimer można ustawić 5 liczników czasu)
+- przelicznik ilości potrzebnych składników dla foremek
