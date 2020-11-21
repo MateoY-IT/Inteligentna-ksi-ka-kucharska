@@ -12,4 +12,5 @@ Główne funkcjonalności:
 - zaczytywanie przepisów z bazy danych
 - opcja dodania i usuwania przepisów (własnych)
 - możliwość edycji zapisanych wcześniej przepisów
-
+- dodawanie zdjęć do przepisów
+- obliczanie kaloryczności
