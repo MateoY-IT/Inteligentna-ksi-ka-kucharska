@@ -66,6 +66,12 @@ namespace Inteligentna_Ksiazka_Kucharska
             }
             else msgError("Proszę podać nazwę użytkownika.");
 
+            if (textlogin.Text == "admin" && texthaslo.Text == "admin")
+            {
+                Main mdl = new Main();
+                mdl.ShowDialog();
+                
+            }
 
         }
         private void msgError(string msg)
