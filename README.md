@@ -17,3 +17,4 @@ Główne funkcjonalności:
 - lista zakupów
 - timer(multitimer można ustawić 5 liczników czasu)
 - przelicznik ilości potrzebnych składników dla foremek
+- historia ostatnich oglądanych przepisów
