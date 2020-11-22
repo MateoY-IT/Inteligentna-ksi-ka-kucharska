@@ -8,7 +8,6 @@ Projekt inteligentnej książki kucharskiej ma na celu stworzenie programu do ad
 
 Główne funkcjonalności:
 - wyszukiwanie przepisów po dostępnych produktach
-- pobieranie aktualnie zalogowanego użytkownika 
 - zaczytywanie przepisów z bazy danych
 - opcja dodania i usuwania przepisów (własnych)
 - możliwość edycji zapisanych wcześniej przepisów
