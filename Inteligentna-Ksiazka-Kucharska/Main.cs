@@ -17,14 +17,4 @@ namespace Inteligentna_Ksiazka_Kucharska
             InitializeComponent();
         }
 
-        private void buttonArtykol_Click(object sender, EventArgs e)
-        {
-            userControl11.BringToFront();
-        }
-
-        private void buttonPrzepisy_Click(object sender, EventArgs e)
-        {
-            
-        }
-    }
 }

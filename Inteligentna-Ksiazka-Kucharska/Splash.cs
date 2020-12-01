@@ -49,7 +49,7 @@ namespace Inteligentna_Ksiazka_Kucharska
             {
                 this.Hide();
                 timer1.Enabled = false;
-                Login mdl = new Login();
+                Main mdl = new Main();
                 mdl.ShowDialog();
             }
             progressBar1.Value = a;
