@@ -35,8 +35,12 @@
             this.ulubioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaZakupówToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.przepisyDataSet = new Inteligentna_Ksiazka_Kucharska.PrzepisyDataSet();
+            this.listbprzepis = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.przepisyDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,21 +99,49 @@
             this.listaZakupówToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.listaZakupówToolStripMenuItem.Text = "Lista Zakupów";
             // 
+            // przepisyDataSet
+            // 
+            this.przepisyDataSet.DataSetName = "PrzepisyDataSet";
+            this.przepisyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // listbprzepis
+            // 
+            this.listbprzepis.FormattingEnabled = true;
+            this.listbprzepis.Location = new System.Drawing.Point(200, 47);
+            this.listbprzepis.Name = "listbprzepis";
+            this.listbprzepis.Size = new System.Drawing.Size(483, 225);
+            this.listbprzepis.TabIndex = 2;
+            this.listbprzepis.SelectedIndexChanged += new System.EventHandler(this.listbprzepis_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(207, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Przepisy";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 453);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.listbprzepis);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.przepisyDataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -122,5 +154,8 @@
         private System.Windows.Forms.ToolStripMenuItem ulubioneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaZakupówToolStripMenuItem;
+        private PrzepisyDataSet przepisyDataSet;
+        private System.Windows.Forms.ListBox listbprzepis;
+        private System.Windows.Forms.Label label2;
     }
 }

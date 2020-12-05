@@ -1,7 +1,6 @@
 C:\Users\brand\Desktop\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\bin\Debug\Inteligentna-Ksiazka-Kucharska.exe.config
 C:\Users\brand\Desktop\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\bin\Debug\Inteligentna-Ksiazka-Kucharska.exe
 C:\Users\brand\Desktop\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.csprojAssemblyReference.cache
-C:\Users\brand\Desktop\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Login.resources
 C:\Users\brand\Desktop\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Properties.Resources.resources
 C:\Users\brand\Desktop\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Splash.resources
 C:\Users\brand\Desktop\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.csproj.GenerateResource.cache
@@ -34,3 +33,7 @@ C:\Users\goner\OneDrive\Desktop\inzynieria\Inteligentna-ksi-ka-kucharska\Intelig
 C:\Users\goner\OneDrive\Desktop\inzynieria\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\bin\Debug\Inteligentna-Ksiazka-Kucharska.exe.config
 C:\Users\goner\OneDrive\Desktop\inzynieria\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\bin\Debug\Inteligentna-Ksiazka-Kucharska.exe
 C:\Users\goner\OneDrive\Desktop\inzynieria\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\bin\Debug\Inteligentna-Ksiazka-Kucharska.pdb
+C:\Users\brand\Desktop\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\bin\Debug\Przepisy.mdf
+C:\Users\brand\Desktop\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\bin\Debug\Przepisy_log.ldf
+C:\Users\brand\Desktop\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Main.resources
+C:\Users\brand\Desktop\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.UserControl1.resources
