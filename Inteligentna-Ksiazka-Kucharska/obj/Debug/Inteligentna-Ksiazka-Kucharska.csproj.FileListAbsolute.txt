@@ -22,3 +22,15 @@ D:\Pliki ze studiów\Informatyka\5 semestr\IO\projekt\Inteligentna-Ksiazka-Kucha
 D:\Pliki ze studiów\Informatyka\5 semestr\IO\projekt\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Main.resources
 D:\Pliki ze studiów\Informatyka\5 semestr\IO\projekt\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.UserControl1.resources
 D:\Pliki ze studiów\Informatyka\5 semestr\IO\projekt\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.csprojAssemblyReference.cache
+C:\Users\goner\OneDrive\Desktop\inzynieria\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.csprojAssemblyReference.cache
+C:\Users\goner\OneDrive\Desktop\inzynieria\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Main.resources
+C:\Users\goner\OneDrive\Desktop\inzynieria\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Properties.Resources.resources
+C:\Users\goner\OneDrive\Desktop\inzynieria\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Splash.resources
+C:\Users\goner\OneDrive\Desktop\inzynieria\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.UserControl1.resources
+C:\Users\goner\OneDrive\Desktop\inzynieria\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.csproj.GenerateResource.cache
+C:\Users\goner\OneDrive\Desktop\inzynieria\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.csproj.CoreCompileInputs.cache
+C:\Users\goner\OneDrive\Desktop\inzynieria\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.exe
+C:\Users\goner\OneDrive\Desktop\inzynieria\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.pdb
+C:\Users\goner\OneDrive\Desktop\inzynieria\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\bin\Debug\Inteligentna-Ksiazka-Kucharska.exe.config
+C:\Users\goner\OneDrive\Desktop\inzynieria\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\bin\Debug\Inteligentna-Ksiazka-Kucharska.exe
+C:\Users\goner\OneDrive\Desktop\inzynieria\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\bin\Debug\Inteligentna-Ksiazka-Kucharska.pdb
