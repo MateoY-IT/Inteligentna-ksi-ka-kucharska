@@ -38,6 +38,7 @@
             this.przepisyDataSet = new Inteligentna_Ksiazka_Kucharska.PrzepisyDataSet();
             this.listbprzepis = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBoxopis = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.przepisyDataSet)).BeginInit();
@@ -107,11 +108,12 @@
             // listbprzepis
             // 
             this.listbprzepis.FormattingEnabled = true;
-            this.listbprzepis.Location = new System.Drawing.Point(200, 47);
+            this.listbprzepis.Location = new System.Drawing.Point(206, 47);
             this.listbprzepis.Name = "listbprzepis";
-            this.listbprzepis.Size = new System.Drawing.Size(483, 225);
+            this.listbprzepis.Size = new System.Drawing.Size(309, 303);
             this.listbprzepis.TabIndex = 2;
             this.listbprzepis.SelectedIndexChanged += new System.EventHandler(this.listbprzepis_SelectedIndexChanged);
+            this.listbprzepis.SelectedValueChanged += new System.EventHandler(this.listbprzepis_SelectedValueChanged);
             // 
             // label2
             // 
@@ -122,11 +124,20 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Przepisy";
             // 
+            // textBoxopis
+            // 
+            this.textBoxopis.Location = new System.Drawing.Point(521, 47);
+            this.textBoxopis.Multiline = true;
+            this.textBoxopis.Name = "textBoxopis";
+            this.textBoxopis.Size = new System.Drawing.Size(446, 305);
+            this.textBoxopis.TabIndex = 4;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 453);
+            this.Controls.Add(this.textBoxopis);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listbprzepis);
             this.Controls.Add(this.panel2);
@@ -157,5 +168,6 @@
         private PrzepisyDataSet przepisyDataSet;
         private System.Windows.Forms.ListBox listbprzepis;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxopis;
     }
 }

@@ -1,6 +1,5 @@
 C:\Users\brand\Desktop\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\bin\Debug\Inteligentna-Ksiazka-Kucharska.exe.config
 C:\Users\brand\Desktop\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\bin\Debug\Inteligentna-Ksiazka-Kucharska.exe
-C:\Users\brand\Desktop\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.csprojAssemblyReference.cache
 C:\Users\brand\Desktop\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Properties.Resources.resources
 C:\Users\brand\Desktop\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Splash.resources
 C:\Users\brand\Desktop\Inteligentna-ksi-ka-kucharska\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.csproj.GenerateResource.cache

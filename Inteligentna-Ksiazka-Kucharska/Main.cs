@@ -17,6 +17,7 @@ namespace Inteligentna_Ksiazka_Kucharska
         SqlConnection connection;
         string connectionString;
 
+
         public Main()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace Inteligentna_Ksiazka_Kucharska
 
         private void popularneprzepisy()
         {
-            using(connection = new SqlConnection(connectionString))
+            using (connection = new SqlConnection(connectionString)) 
             using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Przepis", connection))
             {
                 DataTable PrzepisTable = new DataTable();
@@ -46,6 +47,22 @@ namespace Inteligentna_Ksiazka_Kucharska
 
         private void listbprzepis_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void listbprzepis_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (listbprzepis.SelectedValue != null)
+            {
+                string element = listbprzepis.SelectedValue.ToString();
+                using (connection = new SqlConnection(connectionString))
+                using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT Czas_przygotowania, Instrukcje FROM Przepis WHERE "+ element, connection))
+                {
+                    DataTable PrzepisTable = new DataTable();
+
+
+                    textBoxopis.Text = PrzepisTable.ToString();
+                }
+            }
         }
     }
 }
