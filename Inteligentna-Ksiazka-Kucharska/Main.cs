@@ -51,18 +51,23 @@ namespace Inteligentna_Ksiazka_Kucharska
 
         private void listbprzepis_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (listbprzepis.SelectedValue != null)
-            {
-                string element = listbprzepis.SelectedValue.ToString();
+
+
+                string element = listbprzepis.GetItemText(listbprzepis.SelectedItem);
                 using (connection = new SqlConnection(connectionString))
-                using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT Czas_przygotowania, Instrukcje FROM Przepis WHERE "+ element, connection))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(
+                    $"SELECT * FROM Przepis WHERE ID_przepisu='{listbprzepis.SelectedValue}'",
+                    connection))
                 {
                     DataTable PrzepisTable = new DataTable();
+                    adapter.Fill(PrzepisTable);
+                    if (PrzepisTable.Rows.Count != 0)
+                    {
+                        textBoxopis.Text = "Instrukcja: " + PrzepisTable.Rows[0]["Instrukcje"].ToString()
+                            + Environment.NewLine + "Czas przygotowania: " + PrzepisTable.Rows[0]["Czas_przygotowania"].ToString();
+                    }
 
-
-                    textBoxopis.Text = PrzepisTable.ToString();
                 }
-            }
         }
     }
 }
