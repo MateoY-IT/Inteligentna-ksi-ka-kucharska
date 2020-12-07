@@ -69,5 +69,12 @@ namespace Inteligentna_Ksiazka_Kucharska
 
                 }
         }
+
+        private void buttondodaj_Click(object sender, EventArgs e)
+        {
+            Dodaj mdf = new Dodaj();
+            mdf.ShowDialog();
+
+        }
     }
 }

@@ -39,6 +39,9 @@
             this.listbprzepis = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxopis = new System.Windows.Forms.TextBox();
+            this.buttondodaj = new System.Windows.Forms.Button();
+            this.buttonusun = new System.Windows.Forms.Button();
+            this.buttonedytuj = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.przepisyDataSet)).BeginInit();
@@ -132,11 +135,45 @@
             this.textBoxopis.Size = new System.Drawing.Size(446, 305);
             this.textBoxopis.TabIndex = 4;
             // 
+            // buttondodaj
+            // 
+            this.buttondodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttondodaj.Location = new System.Drawing.Point(222, 375);
+            this.buttondodaj.Name = "buttondodaj";
+            this.buttondodaj.Size = new System.Drawing.Size(210, 46);
+            this.buttondodaj.TabIndex = 5;
+            this.buttondodaj.Text = "Dodaj Przepis";
+            this.buttondodaj.UseVisualStyleBackColor = true;
+            this.buttondodaj.Click += new System.EventHandler(this.buttondodaj_Click);
+            // 
+            // buttonusun
+            // 
+            this.buttonusun.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonusun.Location = new System.Drawing.Point(454, 375);
+            this.buttonusun.Name = "buttonusun";
+            this.buttonusun.Size = new System.Drawing.Size(210, 46);
+            this.buttonusun.TabIndex = 6;
+            this.buttonusun.Text = "Usuń Przepis";
+            this.buttonusun.UseVisualStyleBackColor = true;
+            // 
+            // buttonedytuj
+            // 
+            this.buttonedytuj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonedytuj.Location = new System.Drawing.Point(688, 375);
+            this.buttonedytuj.Name = "buttonedytuj";
+            this.buttonedytuj.Size = new System.Drawing.Size(210, 46);
+            this.buttonedytuj.TabIndex = 7;
+            this.buttonedytuj.Text = "Edytuj Przepis";
+            this.buttonedytuj.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 453);
+            this.Controls.Add(this.buttonedytuj);
+            this.Controls.Add(this.buttonusun);
+            this.Controls.Add(this.buttondodaj);
             this.Controls.Add(this.textBoxopis);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listbprzepis);
@@ -169,5 +206,8 @@
         private System.Windows.Forms.ListBox listbprzepis;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxopis;
+        private System.Windows.Forms.Button buttondodaj;
+        private System.Windows.Forms.Button buttonusun;
+        private System.Windows.Forms.Button buttonedytuj;
     }
 }
