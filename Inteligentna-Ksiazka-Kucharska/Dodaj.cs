@@ -29,7 +29,7 @@ namespace Inteligentna_Ksiazka_Kucharska
 
             System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
             cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = "INSERT INTO Przepis (Id_przepisu, Nazwa, Czas_przygotowania, Instrukcje) VALUES (100, 'xD', 'xd', 'xD' )";
+            cmd.CommandText = "INSERT INTO Przepis (Id_przepisu, Nazwa, Czas_przygotowania, Instrukcje) VALUES ()";
             cmd.Connection = sqlConnection1;
 
             sqlConnection1.Open();
@@ -40,6 +40,27 @@ namespace Inteligentna_Ksiazka_Kucharska
         private void banuluj_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void bwybierz_Click(object sender, EventArgs e)
+        {
+            String lokalizacjaobrazu = "";
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Filter = "Pliki jpg(*.jpg)|*.jpg| Pliki png(*.png)|*.png| Wszystkie pliki(*.*)|*.*";
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    lokalizacjaobrazu = dialog.FileName;
+
+                    pictureBox1.ImageLocation = lokalizacjaobrazu;
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd");
+            }
         }
     }
 }

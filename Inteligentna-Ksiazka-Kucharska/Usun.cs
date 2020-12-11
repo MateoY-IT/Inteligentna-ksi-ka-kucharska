@@ -16,5 +16,15 @@ namespace Inteligentna_Ksiazka_Kucharska
         {
             InitializeComponent();
         }
+
+        private void Usun_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void banuluj_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
