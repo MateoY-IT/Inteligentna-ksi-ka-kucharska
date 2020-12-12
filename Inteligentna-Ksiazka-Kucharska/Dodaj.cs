@@ -39,6 +39,8 @@ namespace Inteligentna_Ksiazka_Kucharska
             cmd.ExecuteNonQuery();
             sqlConnection1.Close();
 
+            MessageBox.Show("Dodano przepis: [Nazwa]: " + textBtytul.Text + " [Czas przygotowania]: " + nczasp.Value + " [Przygotowanie]: " + textBprzygotowanie.Text);
+
             Main main = new Main();
             main.popularneprzepisy();
         }
