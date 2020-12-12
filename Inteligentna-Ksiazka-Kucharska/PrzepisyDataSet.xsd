@@ -250,7 +250,7 @@ SELECT Id_składnika, Nazwa, Ilość, Miara FROM Składnik WHERE (Id_składnika 
   <xs:element name="PrzepisyDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PrzepisyDataSet" msprop:Generator_UserDSName="PrzepisyDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Produkt" msprop:Generator_TableClassName="ProduktDataTable" msprop:Generator_TableVarName="tableProdukt" msprop:Generator_TablePropName="Produkt" msprop:Generator_RowDeletingName="ProduktRowDeleting" msprop:Generator_RowChangingName="ProduktRowChanging" msprop:Generator_RowEvHandlerName="ProduktRowChangeEventHandler" msprop:Generator_RowDeletedName="ProduktRowDeleted" msprop:Generator_UserTableName="Produkt" msprop:Generator_RowChangedName="ProduktRowChanged" msprop:Generator_RowEvArgName="ProduktRowChangeEvent" msprop:Generator_RowClassName="ProduktRow">
+        <xs:element name="Produkt" msprop:Generator_TableClassName="ProduktDataTable" msprop:Generator_TableVarName="tableProdukt" msprop:Generator_RowChangedName="ProduktRowChanged" msprop:Generator_TablePropName="Produkt" msprop:Generator_RowDeletingName="ProduktRowDeleting" msprop:Generator_RowChangingName="ProduktRowChanging" msprop:Generator_RowEvHandlerName="ProduktRowChangeEventHandler" msprop:Generator_RowDeletedName="ProduktRowDeleted" msprop:Generator_RowClassName="ProduktRow" msprop:Generator_UserTableName="Produkt" msprop:Generator_RowEvArgName="ProduktRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_produktu" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_produktu" msprop:Generator_ColumnPropNameInRow="Id_produktu" msprop:Generator_ColumnPropNameInTable="Id_produktuColumn" msprop:Generator_UserColumnName="Id_produktu" type="xs:int" />
@@ -286,7 +286,7 @@ SELECT Id_składnika, Nazwa, Ilość, Miara FROM Składnik WHERE (Id_składnika 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Przepis" msprop:Generator_TableClassName="PrzepisDataTable" msprop:Generator_TableVarName="tablePrzepis" msprop:Generator_TablePropName="Przepis" msprop:Generator_RowDeletingName="PrzepisRowDeleting" msprop:Generator_RowChangingName="PrzepisRowChanging" msprop:Generator_RowEvHandlerName="PrzepisRowChangeEventHandler" msprop:Generator_RowDeletedName="PrzepisRowDeleted" msprop:Generator_UserTableName="Przepis" msprop:Generator_RowChangedName="PrzepisRowChanged" msprop:Generator_RowEvArgName="PrzepisRowChangeEvent" msprop:Generator_RowClassName="PrzepisRow">
+        <xs:element name="Przepis" msprop:Generator_TableClassName="PrzepisDataTable" msprop:Generator_TableVarName="tablePrzepis" msprop:Generator_RowChangedName="PrzepisRowChanged" msprop:Generator_TablePropName="Przepis" msprop:Generator_RowDeletingName="PrzepisRowDeleting" msprop:Generator_RowChangingName="PrzepisRowChanging" msprop:Generator_RowEvHandlerName="PrzepisRowChangeEventHandler" msprop:Generator_RowDeletedName="PrzepisRowDeleted" msprop:Generator_RowClassName="PrzepisRow" msprop:Generator_UserTableName="Przepis" msprop:Generator_RowEvArgName="PrzepisRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_przepisu" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_przepisu" msprop:Generator_ColumnPropNameInRow="Id_przepisu" msprop:Generator_ColumnPropNameInTable="Id_przepisuColumn" msprop:Generator_UserColumnName="Id_przepisu" type="xs:int" />
@@ -305,10 +305,11 @@ SELECT Id_składnika, Nazwa, Ilość, Miara FROM Składnik WHERE (Id_składnika 
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Zdjecie" msprop:Generator_ColumnVarNameInTable="columnZdjecie" msprop:Generator_ColumnPropNameInRow="Zdjecie" msprop:Generator_ColumnPropNameInTable="ZdjecieColumn" msprop:Generator_UserColumnName="Zdjecie" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PrzepisSkładnik" msprop:Generator_TableClassName="PrzepisSkładnikDataTable" msprop:Generator_TableVarName="tablePrzepisSkładnik" msprop:Generator_TablePropName="PrzepisSkładnik" msprop:Generator_RowDeletingName="PrzepisSkładnikRowDeleting" msprop:Generator_RowChangingName="PrzepisSkładnikRowChanging" msprop:Generator_RowEvHandlerName="PrzepisSkładnikRowChangeEventHandler" msprop:Generator_RowDeletedName="PrzepisSkładnikRowDeleted" msprop:Generator_UserTableName="PrzepisSkładnik" msprop:Generator_RowChangedName="PrzepisSkładnikRowChanged" msprop:Generator_RowEvArgName="PrzepisSkładnikRowChangeEvent" msprop:Generator_RowClassName="PrzepisSkładnikRow">
+        <xs:element name="PrzepisSkładnik" msprop:Generator_TableClassName="PrzepisSkładnikDataTable" msprop:Generator_TableVarName="tablePrzepisSkładnik" msprop:Generator_RowChangedName="PrzepisSkładnikRowChanged" msprop:Generator_TablePropName="PrzepisSkładnik" msprop:Generator_RowDeletingName="PrzepisSkładnikRowDeleting" msprop:Generator_RowChangingName="PrzepisSkładnikRowChanging" msprop:Generator_RowEvHandlerName="PrzepisSkładnikRowChangeEventHandler" msprop:Generator_RowDeletedName="PrzepisSkładnikRowDeleted" msprop:Generator_RowClassName="PrzepisSkładnikRow" msprop:Generator_UserTableName="PrzepisSkładnik" msprop:Generator_RowEvArgName="PrzepisSkładnikRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -317,7 +318,7 @@ SELECT Id_składnika, Nazwa, Ilość, Miara FROM Składnik WHERE (Id_składnika 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Składnik" msprop:Generator_TableClassName="SkładnikDataTable" msprop:Generator_TableVarName="tableSkładnik" msprop:Generator_TablePropName="Składnik" msprop:Generator_RowDeletingName="SkładnikRowDeleting" msprop:Generator_RowChangingName="SkładnikRowChanging" msprop:Generator_RowEvHandlerName="SkładnikRowChangeEventHandler" msprop:Generator_RowDeletedName="SkładnikRowDeleted" msprop:Generator_UserTableName="Składnik" msprop:Generator_RowChangedName="SkładnikRowChanged" msprop:Generator_RowEvArgName="SkładnikRowChangeEvent" msprop:Generator_RowClassName="SkładnikRow">
+        <xs:element name="Składnik" msprop:Generator_TableClassName="SkładnikDataTable" msprop:Generator_TableVarName="tableSkładnik" msprop:Generator_RowChangedName="SkładnikRowChanged" msprop:Generator_TablePropName="Składnik" msprop:Generator_RowDeletingName="SkładnikRowDeleting" msprop:Generator_RowChangingName="SkładnikRowChanging" msprop:Generator_RowEvHandlerName="SkładnikRowChangeEventHandler" msprop:Generator_RowDeletedName="SkładnikRowDeleted" msprop:Generator_RowClassName="SkładnikRow" msprop:Generator_UserTableName="Składnik" msprop:Generator_RowEvArgName="SkładnikRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_składnika" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_składnika" msprop:Generator_ColumnPropNameInRow="Id_składnika" msprop:Generator_ColumnPropNameInTable="Id_składnikaColumn" msprop:Generator_UserColumnName="Id_składnika" type="xs:int" />
@@ -354,8 +355,8 @@ SELECT Id_składnika, Nazwa, Ilość, Miara FROM Składnik WHERE (Id_składnika 
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="PrzepisFK" msdata:parent="Przepis" msdata:child="PrzepisSkładnik" msdata:parentkey="Id_przepisu" msdata:childkey="PrzepisId" msprop:Generator_UserChildTable="PrzepisSkładnik" msprop:Generator_ChildPropName="GetPrzepisSkładnikRows" msprop:Generator_UserRelationName="PrzepisFK" msprop:Generator_ParentPropName="PrzepisRow" msprop:Generator_RelationVarName="relationPrzepisFK" msprop:Generator_UserParentTable="Przepis" />
-      <msdata:Relationship name="SkładnikFK" msdata:parent="Składnik" msdata:child="PrzepisSkładnik" msdata:parentkey="Id_składnika" msdata:childkey="SkładnikId" msprop:Generator_UserChildTable="PrzepisSkładnik" msprop:Generator_ChildPropName="GetPrzepisSkładnikRows" msprop:Generator_UserRelationName="SkładnikFK" msprop:Generator_RelationVarName="relationSkładnikFK" msprop:Generator_UserParentTable="Składnik" msprop:Generator_ParentPropName="SkładnikRow" />
+      <msdata:Relationship name="PrzepisFK" msdata:parent="Przepis" msdata:child="PrzepisSkładnik" msdata:parentkey="Id_przepisu" msdata:childkey="PrzepisId" msprop:Generator_UserChildTable="PrzepisSkładnik" msprop:Generator_ChildPropName="GetPrzepisSkładnikRows" msprop:Generator_UserRelationName="PrzepisFK" msprop:Generator_RelationVarName="relationPrzepisFK" msprop:Generator_UserParentTable="Przepis" msprop:Generator_ParentPropName="PrzepisRow" />
+      <msdata:Relationship name="SkładnikFK" msdata:parent="Składnik" msdata:child="PrzepisSkładnik" msdata:parentkey="Id_składnika" msdata:childkey="SkładnikId" msprop:Generator_UserChildTable="PrzepisSkładnik" msprop:Generator_ChildPropName="GetPrzepisSkładnikRows" msprop:Generator_UserRelationName="SkładnikFK" msprop:Generator_ParentPropName="SkładnikRow" msprop:Generator_RelationVarName="relationSkładnikFK" msprop:Generator_UserParentTable="Składnik" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

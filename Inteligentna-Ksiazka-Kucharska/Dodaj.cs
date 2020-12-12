@@ -14,7 +14,9 @@ namespace Inteligentna_Ksiazka_Kucharska
 {
     public partial class Dodaj : Form
     {
+        SqlConnection connection;
         string connectionString;
+
 
         public Dodaj()
         {
@@ -24,17 +26,21 @@ namespace Inteligentna_Ksiazka_Kucharska
 
         private void bdodaj_Click(object sender, EventArgs e)
         {
+
             System.Data.SqlClient.SqlConnection sqlConnection1 =
-                new System.Data.SqlClient.SqlConnection(connectionString);
+                            new System.Data.SqlClient.SqlConnection(connectionString);
 
             System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
             cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = "INSERT INTO Przepis (Id_przepisu, Nazwa, Czas_przygotowania, Instrukcje) VALUES ()";
+            cmd.CommandText = "INSERT INTO Przepis (Nazwa, Czas_przygotowania, Instrukcje) VALUES ('"+ textBtytul.Text + "', '" + nczasp.Value + "', '"+ textBprzygotowanie.Text +"')";
             cmd.Connection = sqlConnection1;
 
             sqlConnection1.Open();
             cmd.ExecuteNonQuery();
             sqlConnection1.Close();
+
+            Main main = new Main();
+            main.popularneprzepisy();
         }
 
         private void banuluj_Click(object sender, EventArgs e)
@@ -61,6 +67,11 @@ namespace Inteligentna_Ksiazka_Kucharska
             {
                 MessageBox.Show("Błąd");
             }
+        }
+
+        private void Dodaj_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

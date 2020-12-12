@@ -747,6 +747,8 @@ namespace Inteligentna_Ksiazka_Kucharska {
             
             private global::System.Data.DataColumn columnInstrukcje;
             
+            private global::System.Data.DataColumn columnZdjecie;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PrzepisDataTable() {
@@ -814,6 +816,14 @@ namespace Inteligentna_Ksiazka_Kucharska {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ZdjecieColumn {
+                get {
+                    return this.columnZdjecie;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -849,13 +859,14 @@ namespace Inteligentna_Ksiazka_Kucharska {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PrzepisRow AddPrzepisRow(string Nazwa, short Czas_przygotowania, string Instrukcje) {
+            public PrzepisRow AddPrzepisRow(string Nazwa, short Czas_przygotowania, string Instrukcje, string Zdjecie) {
                 PrzepisRow rowPrzepisRow = ((PrzepisRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Nazwa,
                         Czas_przygotowania,
-                        Instrukcje};
+                        Instrukcje,
+                        Zdjecie};
                 rowPrzepisRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPrzepisRow);
                 return rowPrzepisRow;
@@ -889,6 +900,7 @@ namespace Inteligentna_Ksiazka_Kucharska {
                 this.columnNazwa = base.Columns["Nazwa"];
                 this.columnCzas_przygotowania = base.Columns["Czas_przygotowania"];
                 this.columnInstrukcje = base.Columns["Instrukcje"];
+                this.columnZdjecie = base.Columns["Zdjecie"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -902,6 +914,8 @@ namespace Inteligentna_Ksiazka_Kucharska {
                 base.Columns.Add(this.columnCzas_przygotowania);
                 this.columnInstrukcje = new global::System.Data.DataColumn("Instrukcje", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnInstrukcje);
+                this.columnZdjecie = new global::System.Data.DataColumn("Zdjecie", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnZdjecie);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId_przepisu}, true));
                 this.columnId_przepisu.AutoIncrement = true;
@@ -1782,6 +1796,34 @@ namespace Inteligentna_Ksiazka_Kucharska {
                 set {
                     this[this.tablePrzepis.InstrukcjeColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Zdjecie {
+                get {
+                    try {
+                        return ((string)(this[this.tablePrzepis.ZdjecieColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Zdjecie\' w tabeli \'Przepis\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePrzepis.ZdjecieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsZdjecieNull() {
+                return this.IsNull(this.tablePrzepis.ZdjecieColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetZdjecieNull() {
+                this[this.tablePrzepis.ZdjecieColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2694,7 +2736,8 @@ SELECT Id_przepisu, Nazwa, Czas_przygotowania, Instrukcje FROM Przepis WHERE (Id
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id_przepisu, Nazwa, Czas_przygotowania, Instrukcje FROM dbo.Przepis";
+            this._commandCollection[0].CommandText = "SELECT Id_przepisu, Nazwa, Czas_przygotowania, Instrukcje, Zdjecie FROM dbo.Przep" +
+                "is";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

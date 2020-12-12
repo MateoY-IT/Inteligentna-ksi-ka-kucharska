@@ -30,9 +30,9 @@ namespace Inteligentna_Ksiazka_Kucharska
             popularneprzepisy();
         }
 
-        private void popularneprzepisy()
+        public void popularneprzepisy()
         {
-            using (connection = new SqlConnection(connectionString)) 
+            using (connection = new SqlConnection(connectionString))
             using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Przepis", connection))
             {
                 DataTable PrzepisTable = new DataTable();

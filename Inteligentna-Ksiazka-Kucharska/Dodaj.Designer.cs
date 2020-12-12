@@ -36,12 +36,13 @@ namespace Inteligentna_Ksiazka_Kucharska
             this.textBtytul = new System.Windows.Forms.TextBox();
             this.textBprzygotowanie = new System.Windows.Forms.TextBox();
             this.listBskladniki = new System.Windows.Forms.ListBox();
-            this.textBczas = new System.Windows.Forms.TextBox();
             this.bdodaj = new System.Windows.Forms.Button();
             this.banuluj = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bwybierz = new System.Windows.Forms.Button();
+            this.nczasp = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nczasp)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -91,7 +92,7 @@ namespace Inteligentna_Ksiazka_Kucharska
             // textBtytul
             // 
             this.textBtytul.Location = new System.Drawing.Point(48, 59);
-            this.textBtytul.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBtytul.Margin = new System.Windows.Forms.Padding(4);
             this.textBtytul.Name = "textBtytul";
             this.textBtytul.Size = new System.Drawing.Size(268, 22);
             this.textBtytul.TabIndex = 4;
@@ -99,7 +100,7 @@ namespace Inteligentna_Ksiazka_Kucharska
             // textBprzygotowanie
             // 
             this.textBprzygotowanie.Location = new System.Drawing.Point(51, 230);
-            this.textBprzygotowanie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBprzygotowanie.Margin = new System.Windows.Forms.Padding(4);
             this.textBprzygotowanie.Multiline = true;
             this.textBprzygotowanie.Name = "textBprzygotowanie";
             this.textBprzygotowanie.Size = new System.Drawing.Size(769, 203);
@@ -110,23 +111,15 @@ namespace Inteligentna_Ksiazka_Kucharska
             this.listBskladniki.FormattingEnabled = true;
             this.listBskladniki.ItemHeight = 16;
             this.listBskladniki.Location = new System.Drawing.Point(484, 59);
-            this.listBskladniki.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBskladniki.Margin = new System.Windows.Forms.Padding(4);
             this.listBskladniki.Name = "listBskladniki";
             this.listBskladniki.Size = new System.Drawing.Size(308, 52);
             this.listBskladniki.TabIndex = 6;
             // 
-            // textBczas
-            // 
-            this.textBczas.Location = new System.Drawing.Point(484, 178);
-            this.textBczas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBczas.Name = "textBczas";
-            this.textBczas.Size = new System.Drawing.Size(293, 22);
-            this.textBczas.TabIndex = 7;
-            // 
             // bdodaj
             // 
             this.bdodaj.Location = new System.Drawing.Point(964, 311);
-            this.bdodaj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bdodaj.Margin = new System.Windows.Forms.Padding(4);
             this.bdodaj.Name = "bdodaj";
             this.bdodaj.Size = new System.Drawing.Size(280, 57);
             this.bdodaj.TabIndex = 8;
@@ -137,7 +130,7 @@ namespace Inteligentna_Ksiazka_Kucharska
             // banuluj
             // 
             this.banuluj.Location = new System.Drawing.Point(964, 376);
-            this.banuluj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.banuluj.Margin = new System.Windows.Forms.Padding(4);
             this.banuluj.Name = "banuluj";
             this.banuluj.Size = new System.Drawing.Size(280, 57);
             this.banuluj.TabIndex = 9;
@@ -165,16 +158,23 @@ namespace Inteligentna_Ksiazka_Kucharska
             this.bwybierz.UseVisualStyleBackColor = true;
             this.bwybierz.Click += new System.EventHandler(this.bwybierz_Click);
             // 
+            // nczasp
+            // 
+            this.nczasp.Location = new System.Drawing.Point(490, 179);
+            this.nczasp.Name = "nczasp";
+            this.nczasp.Size = new System.Drawing.Size(269, 22);
+            this.nczasp.TabIndex = 12;
+            // 
             // Dodaj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1320, 484);
+            this.Controls.Add(this.nczasp);
             this.Controls.Add(this.bwybierz);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.banuluj);
             this.Controls.Add(this.bdodaj);
-            this.Controls.Add(this.textBczas);
             this.Controls.Add(this.listBskladniki);
             this.Controls.Add(this.textBprzygotowanie);
             this.Controls.Add(this.textBtytul);
@@ -182,10 +182,12 @@ namespace Inteligentna_Ksiazka_Kucharska
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Dodaj";
             this.Text = "Dodaj Przepis";
+            this.Load += new System.EventHandler(this.Dodaj_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nczasp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,10 +202,10 @@ namespace Inteligentna_Ksiazka_Kucharska
         private System.Windows.Forms.TextBox textBtytul;
         private System.Windows.Forms.TextBox textBprzygotowanie;
         private System.Windows.Forms.ListBox listBskladniki;
-        private System.Windows.Forms.TextBox textBczas;
         private System.Windows.Forms.Button bdodaj;
         private System.Windows.Forms.Button banuluj;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button bwybierz;
+        private System.Windows.Forms.NumericUpDown nczasp;
     }
 }

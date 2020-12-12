@@ -71,6 +71,9 @@
     <Compile Include="Dodaj.Designer.cs">
       <DependentUpon>Dodaj.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrzepisyDataSet.cs">
+      <DependentUpon>PrzepisyDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Usun.cs">
       <SubType>Form</SubType>
     </Compile>
