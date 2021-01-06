@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="PrzepisyDatabase">
+  <DataContextMoniker Name="/PrzepisyDatabaseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ebeadfd7-b532-48fe-bf5c-8b34ecea98e5" absoluteBounds="0.875, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/PrzepisyDatabaseDataContext/Przepis" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fae0800b-c21c-4987-8ceb-03fa22a19148" absoluteBounds="0.88999999999999968, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="187a44e2-f08f-4e12-87cf-57379444a78e" absoluteBounds="5, 0.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/PrzepisyDatabaseDataContext/Produkt" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3cd4e002-2e96-4379-b0b6-4d4d9f548572" absoluteBounds="5.015, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8b05d3fc-8f10-44eb-aa16-1c81dc5c0c40" absoluteBounds="3.875, 3.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PrzepisyDatabaseDataContext/Sklad" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2db9269a-90d5-414b-ad27-f420e15ffd1e" absoluteBounds="3.8899999999999997, 3.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.4375 : 2.7131982421875); (5.4375 : 3.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PrzepisyDatabaseDataContext/Produkt/Produkt_Sklad" />
+      <nodes>
+        <classShapeMoniker Id="187a44e2-f08f-4e12-87cf-57379444a78e" />
+        <classShapeMoniker Id="8b05d3fc-8f10-44eb-aa16-1c81dc5c0c40" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.71875 : 2.52089680989583); (2.71875 : 3.40625); (3.875 : 3.40625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PrzepisyDatabaseDataContext/Przepis/Przepis_Sklad" />
+      <nodes>
+        <classShapeMoniker Id="ebeadfd7-b532-48fe-bf5c-8b34ecea98e5" />
+        <classShapeMoniker Id="8b05d3fc-8f10-44eb-aa16-1c81dc5c0c40" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="437b7812-5c79-4047-82cb-9c0de3e91979" absoluteBounds="7, 3.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PrzepisyDatabaseDataContext/Lista" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0677a712-5e3f-49f9-8092-0fd10c3bc6b3" absoluteBounds="7.0150000000000006, 3.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.250002 : 2.7131982421875); (6.250002 : 2.9531982421875); (8 : 2.9531982421875); (8 : 3.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PrzepisyDatabaseDataContext/Produkt/Produkt_Lista" />
+      <nodes>
+        <classShapeMoniker Id="187a44e2-f08f-4e12-87cf-57379444a78e" />
+        <classShapeMoniker Id="437b7812-5c79-4047-82cb-9c0de3e91979" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="99f31c46-1e61-4e7a-9be7-a13941df8091" absoluteBounds="0.5, 3.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PrzepisyDatabaseDataContext/Historia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ae77666-187e-48c6-9ecc-b1ff57870df0" absoluteBounds="0.51499999999999968, 4.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.6875 : 2.52089680989583); (1.6875 : 3.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PrzepisyDatabaseDataContext/Przepis/Przepis_Historia" />
+      <nodes>
+        <classShapeMoniker Id="ebeadfd7-b532-48fe-bf5c-8b34ecea98e5" />
+        <classShapeMoniker Id="99f31c46-1e61-4e7a-9be7-a13941df8091" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

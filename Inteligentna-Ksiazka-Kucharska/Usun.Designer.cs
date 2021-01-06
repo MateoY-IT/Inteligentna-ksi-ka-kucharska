@@ -38,17 +38,18 @@ namespace Inteligentna_Ksiazka_Kucharska
             // bpotwierdz
             // 
             this.bpotwierdz.Location = new System.Drawing.Point(35, 251);
-            this.bpotwierdz.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bpotwierdz.Margin = new System.Windows.Forms.Padding(4);
             this.bpotwierdz.Name = "bpotwierdz";
             this.bpotwierdz.Size = new System.Drawing.Size(280, 57);
             this.bpotwierdz.TabIndex = 0;
             this.bpotwierdz.Text = "Potwierdź";
             this.bpotwierdz.UseVisualStyleBackColor = true;
+            this.bpotwierdz.Click += new System.EventHandler(this.bpotwierdz_Click);
             // 
             // banuluj
             // 
             this.banuluj.Location = new System.Drawing.Point(383, 251);
-            this.banuluj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.banuluj.Margin = new System.Windows.Forms.Padding(4);
             this.banuluj.Name = "banuluj";
             this.banuluj.Size = new System.Drawing.Size(280, 57);
             this.banuluj.TabIndex = 1;
@@ -72,10 +73,11 @@ namespace Inteligentna_Ksiazka_Kucharska
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(35, 68);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(627, 148);
             this.listBox1.TabIndex = 3;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Usun
             // 
@@ -86,8 +88,9 @@ namespace Inteligentna_Ksiazka_Kucharska
             this.Controls.Add(this.label1);
             this.Controls.Add(this.banuluj);
             this.Controls.Add(this.bpotwierdz);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Usun";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuń Przepis";
             this.Load += new System.EventHandler(this.Usun_Load);
             this.ResumeLayout(false);

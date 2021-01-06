@@ -17,7 +17,6 @@ namespace Inteligentna_Ksiazka_Kucharska
         SqlConnection connection;
         string connectionString;
 
-
         public Main()
         {
             InitializeComponent();
@@ -73,8 +72,66 @@ namespace Inteligentna_Ksiazka_Kucharska
         private void buttondodaj_Click(object sender, EventArgs e)
         {
             Dodaj mdf = new Dodaj();
-            mdf.ShowDialog();
+            DialogResult dR = mdf.ShowDialog();
+
+            if (dR == DialogResult.OK) popularneprzepisy();
+        }
+
+        private void buttonusun_Click(object sender, EventArgs e)
+        {
+            Usun mdf = new Usun();
+            DialogResult dR = mdf.ShowDialog();
+
+            if (dR == DialogResult.OK) popularneprzepisy();
+        }
+
+        private void buttonedytuj_Click(object sender, EventArgs e)
+        {
+            Edytuj mdf = new Edytuj();
+            DialogResult dR = mdf.ShowDialog();
+
+            if (dR == DialogResult.OK) popularneprzepisy();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
 
         }
+
+        private void przepisyToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+        /*
+void Wyszukiwanie()
+{
+SqlDataAdapter sqlDa = new SqlDataAdapter("Wyszukaj", connection);
+sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+sqlDa.SelectCommand.Parameters.AddWithValue("@Nazwa", txtSearch.Text.Trim());
+}
+
+private void btnSearch_Click_1(object sender, EventArgs e)
+{
+try
+{
+Wyszukiwanie();
+popularneprzepisy();
+}
+catch (Exception ex)
+{
+MessageBox.Show(ex.Message, "Error");
+}
+}
+/* private void btnSearch_Click1(object sender, EventArgs e)
+{
+try
+{
+Wyszukiwanie();
+}
+catch (Exception ex)
+{
+MessageBox.Show(ex.Message, "Error");
+}
+}*/
     }
 }

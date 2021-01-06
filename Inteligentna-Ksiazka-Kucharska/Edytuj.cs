@@ -12,39 +12,32 @@ using System.Data.SqlClient;
 
 namespace Inteligentna_Ksiazka_Kucharska
 {
-    public partial class Dodaj : Form
+    public partial class Edytuj : Form
     {
+        PrzepisyDatabaseDataContext DatabaseDataContext = new PrzepisyDatabaseDataContext();
+        Przepis SelectedPrzepis;
         SqlConnection connection;
         string connectionString;
 
-
-        public Dodaj()
+        public Edytuj()
         {
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["Inteligentna_Ksiazka_Kucharska.Properties.Settings.PrzepisyConnectionString"].ConnectionString;
         }
-
-        private void bdodaj_Click(object sender, EventArgs e)
+       
+        private void Edytuj_Load(object sender, EventArgs e)
         {
-
-           SqlConnection sqlConnection1 =
-                            new SqlConnection(connectionString);
-
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO Przepis (Nazwa, Instrukcje, Zdjecie) VALUES ('"+ textBtytul.Text + "', '"+ textBprzygotowanie.Text +"', '"+ pictureBox1.ImageLocation+ "')";
-            cmd.Connection = sqlConnection1;
-
-            sqlConnection1.Open();
-            cmd.ExecuteNonQuery();
-            sqlConnection1.Close();
-
-            this.DialogResult = DialogResult.OK;
+            loadPrzepis();
+            listBoxwyswietl.DisplayMember = "Nazwa";
+            popularneprodukty();
         }
 
-        private void banuluj_Click(object sender, EventArgs e)
+        private void loadPrzepis()
         {
-            Close();
+          foreach( Przepis w in DatabaseDataContext.Przepis)
+            {
+                listBoxwyswietl.Items.Add(w);
+            }
         }
 
         private void bwybierz_Click(object sender, EventArgs e)
@@ -67,6 +60,44 @@ namespace Inteligentna_Ksiazka_Kucharska
                 MessageBox.Show("Błąd");
             }
         }
+
+        private void banuluj_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void listBoxwyswietl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(listBoxwyswietl.SelectedItems.Count== 1)
+            {
+                listBoxwyswietl.Enabled = false;
+                SelectedPrzepis = listBoxwyswietl.SelectedItem as Przepis;
+                textBoxTitle.Text = SelectedPrzepis.Nazwa;
+                textBprzygotowanie.Text = SelectedPrzepis.Instrukcje;
+            }
+        }
+
+        private void bedytuj_Click(object sender, EventArgs e)
+        {
+            string nazwa = listBoxwyswietl.GetItemText(listBoxwyswietl.SelectedItem);
+            SqlConnection sqlConnection1 =
+                           new SqlConnection(connectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "update Przepis SET " +
+                "Nazwa = '" + textBoxTitle.Text + "', " +
+                "Instrukcje = '" + textBprzygotowanie.Text + "', " +
+                "Zdjecie = '" + pictureBox1.ImageLocation + "' " +
+                "WHERE Nazwa = '" + nazwa + "'";
+            cmd.Connection = sqlConnection1;
+
+            sqlConnection1.Open();
+            cmd.ExecuteNonQuery();
+            sqlConnection1.Close();
+
+            this.DialogResult = DialogResult.OK;
+        }
         public void popularneprodukty()
         {
             using (connection = new SqlConnection(connectionString))
@@ -81,19 +112,8 @@ namespace Inteligentna_Ksiazka_Kucharska
                 listBskladniki.DataSource = ProduktTable;
             }
         }
-        private void Dodaj_Load(object sender, EventArgs e)
-        {
-            popularneprodukty();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void listBskladniki_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

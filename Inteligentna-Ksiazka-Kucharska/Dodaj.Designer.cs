@@ -82,7 +82,7 @@ namespace Inteligentna_Ksiazka_Kucharska
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(478, 125);
+            this.label4.Location = new System.Drawing.Point(35, 100);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(281, 31);
@@ -110,11 +110,12 @@ namespace Inteligentna_Ksiazka_Kucharska
             // 
             this.listBskladniki.FormattingEnabled = true;
             this.listBskladniki.ItemHeight = 16;
-            this.listBskladniki.Location = new System.Drawing.Point(484, 59);
+            this.listBskladniki.Location = new System.Drawing.Point(484, 47);
             this.listBskladniki.Margin = new System.Windows.Forms.Padding(4);
             this.listBskladniki.Name = "listBskladniki";
-            this.listBskladniki.Size = new System.Drawing.Size(308, 52);
+            this.listBskladniki.Size = new System.Drawing.Size(390, 148);
             this.listBskladniki.TabIndex = 6;
+            this.listBskladniki.SelectedIndexChanged += new System.EventHandler(this.listBskladniki_SelectedIndexChanged);
             // 
             // bdodaj
             // 
@@ -146,6 +147,7 @@ namespace Inteligentna_Ksiazka_Kucharska
             this.pictureBox1.Size = new System.Drawing.Size(381, 204);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // bwybierz
             // 
@@ -160,10 +162,11 @@ namespace Inteligentna_Ksiazka_Kucharska
             // 
             // nczasp
             // 
-            this.nczasp.Location = new System.Drawing.Point(490, 179);
+            this.nczasp.Location = new System.Drawing.Point(47, 144);
             this.nczasp.Name = "nczasp";
             this.nczasp.Size = new System.Drawing.Size(269, 22);
             this.nczasp.TabIndex = 12;
+            this.nczasp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Dodaj
             // 
@@ -184,6 +187,7 @@ namespace Inteligentna_Ksiazka_Kucharska
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Dodaj";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj Przepis";
             this.Load += new System.EventHandler(this.Dodaj_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

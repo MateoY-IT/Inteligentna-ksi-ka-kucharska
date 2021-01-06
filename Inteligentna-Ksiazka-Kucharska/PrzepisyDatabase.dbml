@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Przepisy" Class="PrzepisyDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Przepisy.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="Inteligentna_Ksiazka_Kucharska.Properties.Settings" SettingsPropertyName="PrzepisyConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Przepis" Member="Przepis">
+    <Type Name="Przepis">
+      <Column Name="Id_przepisu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nazwa" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Czas_przygotowania" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="Instrukcje" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Zdjecie" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Przepis_Sklad" Member="Sklad" ThisKey="Id_przepisu" OtherKey="przepis_ID" Type="Sklad" />
+      <Association Name="Przepis_Historia" Member="Historia" ThisKey="Id_przepisu" OtherKey="przepis_ID" Type="Historia" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Produkt" Member="Produkt">
+    <Type Name="Produkt">
+      <Column Name="Id_produktu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nazwa" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Kalorie" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Białko" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Węglowodany" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Tłuszcze" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Produkt_Sklad" Member="Sklad" ThisKey="Id_produktu" OtherKey="product_id" Type="Sklad" />
+      <Association Name="Produkt_Lista" Member="Lista" ThisKey="Id_produktu" OtherKey="product_id" Type="Lista" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sklad" Member="Sklad">
+    <Type Name="Sklad">
+      <Column Name="sklad_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="przepis_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ilosc" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Association Name="Produkt_Sklad" Member="Produkt" ThisKey="product_id" OtherKey="Id_produktu" Type="Produkt" IsForeignKey="true" />
+      <Association Name="Przepis_Sklad" Member="Przepis" ThisKey="przepis_ID" OtherKey="Id_przepisu" Type="Przepis" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Lista" Member="Lista">
+    <Type Name="Lista">
+      <Column Name="lista_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Produkt_Lista" Member="Produkt" ThisKey="product_id" OtherKey="Id_produktu" Type="Produkt" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Historia" Member="Historia">
+    <Type Name="Historia">
+      <Column Name="history_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="przepis_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Przepis_Historia" Member="Przepis" ThisKey="przepis_ID" OtherKey="Id_przepisu" Type="Przepis" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
