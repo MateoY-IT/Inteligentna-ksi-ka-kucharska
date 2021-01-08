@@ -13,7 +13,7 @@ namespace Inteligentna_Ksiazka_Kucharska
     public partial class Splash : Form
         
     {
-        int a = 0;
+        int a = 50;
         public Splash()
         {
             InitializeComponent();

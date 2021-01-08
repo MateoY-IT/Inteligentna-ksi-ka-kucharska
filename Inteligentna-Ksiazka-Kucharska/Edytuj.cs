@@ -31,7 +31,20 @@ namespace Inteligentna_Ksiazka_Kucharska
             listBoxwyswietl.DisplayMember = "Nazwa";
             popularneprodukty();
         }
+        public void popularneprodukty()
+        {
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Produkt", connection))
+            {
+                DataTable ProduktTable = new DataTable();
+                adapter.Fill(ProduktTable);
 
+                listBskladniki.ValueMember = "ID_produktu";
+                listBskladniki.DisplayMember = "Nazwa";
+
+                listBskladniki.DataSource = ProduktTable;
+            }
+        }
         private void loadPrzepis()
         {
           foreach( Przepis w in DatabaseDataContext.Przepis)
@@ -97,23 +110,6 @@ namespace Inteligentna_Ksiazka_Kucharska
             sqlConnection1.Close();
 
             this.DialogResult = DialogResult.OK;
-        }
-        public void popularneprodukty()
-        {
-            using (connection = new SqlConnection(connectionString))
-            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Produkt", connection))
-            {
-                DataTable ProduktTable = new DataTable();
-                adapter.Fill(ProduktTable);
-
-                listBskladniki.ValueMember = "Id_produktu";
-                listBskladniki.DisplayMember = "Nazwa";
-
-                listBskladniki.DataSource = ProduktTable;
-            }
-        }
-        private void listBskladniki_SelectedIndexChanged(object sender, EventArgs e)
-        {
         }
     }
 }

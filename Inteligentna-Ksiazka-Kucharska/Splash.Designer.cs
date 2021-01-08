@@ -38,7 +38,7 @@
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(32, 463);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(936, 28);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -71,7 +71,7 @@
             this.ClientSize = new System.Drawing.Size(1009, 511);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progressBar1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Splash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inteligentna Ksiazka Kucharska";

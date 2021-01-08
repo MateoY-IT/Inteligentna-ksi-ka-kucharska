@@ -65,10 +65,5 @@ namespace Inteligentna_Ksiazka_Kucharska
             this.DialogResult = DialogResult.OK;
 
         }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

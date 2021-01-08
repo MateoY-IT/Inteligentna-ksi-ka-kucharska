@@ -78,17 +78,17 @@
     <Compile Include="Edytuj.Designer.cs">
       <DependentUpon>Edytuj.cs</DependentUpon>
     </Compile>
-    <Compile Include="History.cs">
+    <Compile Include="Historia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="History.Designer.cs">
-      <DependentUpon>History.cs</DependentUpon>
+    <Compile Include="Historia.Designer.cs">
+      <DependentUpon>Historia.cs</DependentUpon>
     </Compile>
-    <Compile Include="lista.cs">
+    <Compile Include="Listazak.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="lista.Designer.cs">
-      <DependentUpon>lista.cs</DependentUpon>
+    <Compile Include="Listazak.Designer.cs">
+      <DependentUpon>Listazak.cs</DependentUpon>
     </Compile>
     <Compile Include="PrzepisyDatabase.designer.cs">
       <AutoGen>True</AutoGen>
@@ -115,17 +115,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dodaj.resx">
       <DependentUpon>Dodaj.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Edytuj.resx">
       <DependentUpon>Edytuj.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="History.resx">
-      <DependentUpon>History.cs</DependentUpon>
+    <EmbeddedResource Include="Historia.resx">
+      <DependentUpon>Historia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="lista.resx">
-      <DependentUpon>lista.cs</DependentUpon>
+    <EmbeddedResource Include="Listazak.resx">
+      <DependentUpon>Listazak.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -142,6 +148,9 @@
     </Compile>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usun.resx">
       <DependentUpon>Usun.cs</DependentUpon>

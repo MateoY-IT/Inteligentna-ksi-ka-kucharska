@@ -85,9 +85,12 @@ C:\Users\kmate\Desktop\inzmat\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligen
 C:\Users\kmate\Desktop\inzmat\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Main.resources
 C:\Users\kmate\Desktop\inzmat\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Properties.Resources.resources
 C:\Users\kmate\Desktop\inzmat\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Splash.resources
+C:\Users\kmate\Desktop\inzmat\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.UserControl1.resources
 C:\Users\kmate\Desktop\inzmat\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Usun.resources
 C:\Users\kmate\Desktop\inzmat\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.csproj.GenerateResource.cache
 C:\Users\kmate\Desktop\inzmat\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.csproj.CoreCompileInputs.cache
 C:\Users\kmate\Desktop\inzmat\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.csproj.CopyComplete
 C:\Users\kmate\Desktop\inzmat\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.exe
 C:\Users\kmate\Desktop\inzmat\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.pdb
+C:\Users\kmate\Desktop\inzmat\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Listazak.resources
+C:\Users\kmate\Desktop\inzmat\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Historia.resources

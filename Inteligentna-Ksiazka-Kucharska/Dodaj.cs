@@ -41,7 +41,20 @@ namespace Inteligentna_Ksiazka_Kucharska
 
             this.DialogResult = DialogResult.OK;
         }
+        public void popularneprodukty()
+        {
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Produkt", connection))
+            {
+                DataTable ProduktTable = new DataTable();
+                adapter.Fill(ProduktTable);
 
+                listBskladniki.ValueMember = "ID_produktu";
+                listBskladniki.DisplayMember = "Nazwa";
+
+                listBskladniki.DataSource = ProduktTable;
+            }
+        }
         private void banuluj_Click(object sender, EventArgs e)
         {
             Close();
@@ -67,31 +80,13 @@ namespace Inteligentna_Ksiazka_Kucharska
                 MessageBox.Show("Błąd");
             }
         }
-        public void popularneprodukty()
-        {
-            using (connection = new SqlConnection(connectionString))
-            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Produkt", connection))
-            {
-                DataTable ProduktTable = new DataTable();
-                adapter.Fill(ProduktTable);
 
-                listBskladniki.ValueMember = "Id_produktu";
-                listBskladniki.DisplayMember = "Nazwa";
-
-                listBskladniki.DataSource = ProduktTable;
-            }
-        }
         private void Dodaj_Load(object sender, EventArgs e)
         {
             popularneprodukty();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBskladniki_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

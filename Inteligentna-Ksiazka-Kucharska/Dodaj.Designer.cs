@@ -82,7 +82,7 @@ namespace Inteligentna_Ksiazka_Kucharska
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(35, 100);
+            this.label4.Location = new System.Drawing.Point(42, 97);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(281, 31);
@@ -110,12 +110,11 @@ namespace Inteligentna_Ksiazka_Kucharska
             // 
             this.listBskladniki.FormattingEnabled = true;
             this.listBskladniki.ItemHeight = 16;
-            this.listBskladniki.Location = new System.Drawing.Point(484, 47);
+            this.listBskladniki.Location = new System.Drawing.Point(484, 59);
             this.listBskladniki.Margin = new System.Windows.Forms.Padding(4);
             this.listBskladniki.Name = "listBskladniki";
-            this.listBskladniki.Size = new System.Drawing.Size(390, 148);
+            this.listBskladniki.Size = new System.Drawing.Size(336, 148);
             this.listBskladniki.TabIndex = 6;
-            this.listBskladniki.SelectedIndexChanged += new System.EventHandler(this.listBskladniki_SelectedIndexChanged);
             // 
             // bdodaj
             // 
@@ -162,7 +161,7 @@ namespace Inteligentna_Ksiazka_Kucharska
             // 
             // nczasp
             // 
-            this.nczasp.Location = new System.Drawing.Point(47, 144);
+            this.nczasp.Location = new System.Drawing.Point(48, 144);
             this.nczasp.Name = "nczasp";
             this.nczasp.Size = new System.Drawing.Size(269, 22);
             this.nczasp.TabIndex = 12;

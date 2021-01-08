@@ -63,7 +63,8 @@ namespace Inteligentna_Ksiazka_Kucharska
                     if (PrzepisTable.Rows.Count != 0)
                     {
                         textBoxopis.Text = "Instrukcja: " + PrzepisTable.Rows[0]["Instrukcje"].ToString()
-                            + Environment.NewLine + "Czas przygotowania: " + PrzepisTable.Rows[0]["Czas_przygotowania"].ToString();
+                            + Environment.NewLine + "Czas przygotowania: " + PrzepisTable.Rows[0]["Czas_przygotowania"].ToString()
+                            + Environment.NewLine + "Zdjecie: " + PrzepisTable.Rows[0]["Zdjecie"].ToString();
                     }
 
                 }
@@ -93,45 +94,41 @@ namespace Inteligentna_Ksiazka_Kucharska
             if (dR == DialogResult.OK) popularneprzepisy();
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Przepis WHERE Nazwa Like '%" + txtSearch.Text + "%'", connection))
+            {
+                DataTable PrzepisTable = new DataTable();
+                adapter.Fill(PrzepisTable);
+
+                listbprzepis.ValueMember = "ID_przepisu";
+                listbprzepis.DisplayMember = "Nazwa";
+                listbprzepis.DataSource = PrzepisTable;
+            }
+        }
+
+        private void przepisyToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void przepisyToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void ulubioneToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
-        /*
-void Wyszukiwanie()
-{
-SqlDataAdapter sqlDa = new SqlDataAdapter("Wyszukaj", connection);
-sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
-sqlDa.SelectCommand.Parameters.AddWithValue("@Nazwa", txtSearch.Text.Trim());
-}
 
-private void btnSearch_Click_1(object sender, EventArgs e)
-{
-try
-{
-Wyszukiwanie();
-popularneprzepisy();
-}
-catch (Exception ex)
-{
-MessageBox.Show(ex.Message, "Error");
-}
-}
-/* private void btnSearch_Click1(object sender, EventArgs e)
-{
-try
-{
-Wyszukiwanie();
-}
-catch (Exception ex)
-{
-MessageBox.Show(ex.Message, "Error");
-}
-}*/
+        private void historiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Historia nForm = new Historia();
+            nForm.Show();
+        }
+
+        private void listaZakupówToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Listazak nForm = new Listazak();
+            nForm.Show();
+        }
     }
 }

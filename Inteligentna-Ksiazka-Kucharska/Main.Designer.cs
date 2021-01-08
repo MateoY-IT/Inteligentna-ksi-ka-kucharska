@@ -31,9 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.przepisyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.przepisyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.listbprzepis = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxopis = new System.Windows.Forms.TextBox();
@@ -42,12 +40,15 @@
             this.buttonedytuj = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.bToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.przepisyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ulubioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaZakupówToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaZakupówToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,17 +66,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft New Tai Lue", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 37);
+            this.label1.Size = new System.Drawing.Size(119, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Timery:";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel2.Controls.Add(this.menuStrip1);
+            this.panel2.Controls.Add(this.toolStripContainer1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(267, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
@@ -83,35 +84,21 @@
             this.panel2.Size = new System.Drawing.Size(1038, 25);
             this.panel2.TabIndex = 1;
             // 
-            // menuStrip1
+            // toolStripContainer1
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.przepisyToolStripMenuItem,
-            this.ulubioneToolStripMenuItem,
-            this.listaZakupówToolStripMenuItem,
-            this.historiaToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1038, 28);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
-            // przepisyToolStripMenuItem
+            // toolStripContainer1.ContentPanel
             // 
-            this.przepisyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.przepisyToolStripMenuItem1});
-            this.przepisyToolStripMenuItem.Name = "przepisyToolStripMenuItem";
-            this.przepisyToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
-            this.przepisyToolStripMenuItem.Text = "Przepisy";
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1038, 0);
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            this.toolStripContainer1.Size = new System.Drawing.Size(1038, 28);
+            this.toolStripContainer1.TabIndex = 10;
+            this.toolStripContainer1.Text = "toolStripContainer1";
             // 
-            // przepisyToolStripMenuItem1
+            // toolStripContainer1.TopToolStripPanel
             // 
-            this.przepisyToolStripMenuItem1.Name = "przepisyToolStripMenuItem1";
-            this.przepisyToolStripMenuItem1.Size = new System.Drawing.Size(146, 26);
-            this.przepisyToolStripMenuItem1.Text = "Przepisy";
-            this.przepisyToolStripMenuItem1.Click += new System.EventHandler(this.przepisyToolStripMenuItem1_Click);
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
             // 
             // listbprzepis
             // 
@@ -196,30 +183,50 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(306, 28);
             this.txtSearch.TabIndex = 9;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // bToolStripMenuItem1
+            // przepisyToolStripMenuItem
             // 
-            this.bToolStripMenuItem1.Name = "bToolStripMenuItem1";
-            this.bToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.bToolStripMenuItem1.Text = "b";
+            this.przepisyToolStripMenuItem.Name = "przepisyToolStripMenuItem";
+            this.przepisyToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.przepisyToolStripMenuItem.Text = "Przepisy";
+            this.przepisyToolStripMenuItem.Click += new System.EventHandler(this.przepisyToolStripMenuItem_Click);
             // 
             // ulubioneToolStripMenuItem
             // 
             this.ulubioneToolStripMenuItem.Name = "ulubioneToolStripMenuItem";
             this.ulubioneToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.ulubioneToolStripMenuItem.Text = "Ulubione";
-            // 
-            // listaZakupówToolStripMenuItem
-            // 
-            this.listaZakupówToolStripMenuItem.Name = "listaZakupówToolStripMenuItem";
-            this.listaZakupówToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
-            this.listaZakupówToolStripMenuItem.Text = "Lista zakupów";
+            this.ulubioneToolStripMenuItem.Click += new System.EventHandler(this.ulubioneToolStripMenuItem_Click);
             // 
             // historiaToolStripMenuItem
             // 
             this.historiaToolStripMenuItem.Name = "historiaToolStripMenuItem";
             this.historiaToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.historiaToolStripMenuItem.Text = "Historia";
+            this.historiaToolStripMenuItem.Click += new System.EventHandler(this.historiaToolStripMenuItem_Click);
+            // 
+            // listaZakupówToolStripMenuItem
+            // 
+            this.listaZakupówToolStripMenuItem.Name = "listaZakupówToolStripMenuItem";
+            this.listaZakupówToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
+            this.listaZakupówToolStripMenuItem.Text = "Lista Zakupów";
+            this.listaZakupówToolStripMenuItem.Click += new System.EventHandler(this.listaZakupówToolStripMenuItem_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.przepisyToolStripMenuItem,
+            this.ulubioneToolStripMenuItem,
+            this.historiaToolStripMenuItem,
+            this.listaZakupówToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1038, 28);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // Main
             // 
@@ -239,11 +246,16 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
+            this.toolStripContainer1.ResumeLayout(false);
+            this.toolStripContainer1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -255,7 +267,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ListBox listbprzepis;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxopis;
@@ -264,12 +275,12 @@
         private System.Windows.Forms.Button buttonedytuj;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.ToolStripMenuItem bToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem przepisyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem przepisyToolStripMenuItem1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem przepisyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ulubioneToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listaZakupówToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historiaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaZakupówToolStripMenuItem;
     }
 }

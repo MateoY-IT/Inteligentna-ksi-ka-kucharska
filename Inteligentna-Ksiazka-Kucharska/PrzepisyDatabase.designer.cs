@@ -935,11 +935,6 @@ namespace Inteligentna_Ksiazka_Kucharska
     partial void Onprzepis_IDChanged();
     #endregion
 		
-		public Historia()
-		{
-			this._Przepis = default(EntityRef<Przepis>);
-			OnCreated();
-		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_history_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int history_id

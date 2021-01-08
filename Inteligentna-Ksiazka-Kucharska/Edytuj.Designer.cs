@@ -96,7 +96,6 @@ namespace Inteligentna_Ksiazka_Kucharska
             this.listBskladniki.Name = "listBskladniki";
             this.listBskladniki.Size = new System.Drawing.Size(497, 100);
             this.listBskladniki.TabIndex = 14;
-            this.listBskladniki.SelectedIndexChanged += new System.EventHandler(this.listBskladniki_SelectedIndexChanged);
             // 
             // textBoxTitle
             // 
@@ -223,7 +222,7 @@ namespace Inteligentna_Ksiazka_Kucharska
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Edytuj";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Edytuj";
             this.Load += new System.EventHandler(this.Edytuj_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
