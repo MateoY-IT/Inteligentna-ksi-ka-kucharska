@@ -119,7 +119,8 @@ namespace Inteligentna_Ksiazka_Kucharska
             this.Controls.Add(this.panel1);
             this.Name = "Historia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Historia";
+            this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Historia_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

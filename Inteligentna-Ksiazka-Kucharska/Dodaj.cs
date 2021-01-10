@@ -32,7 +32,7 @@ namespace Inteligentna_Ksiazka_Kucharska
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO Przepis (Nazwa, Instrukcje, Zdjecie) VALUES ('"+ textBtytul.Text + "', '"+ textBprzygotowanie.Text +"', '"+ pictureBox1.ImageLocation+ "')";
+            cmd.CommandText = "INSERT INTO Przepis (Nazwa, Czas_przygotowania, Instrukcje, Zdjecie) VALUES ('"+ textBtytul.Text + "', '" + nczasp.Value + "', '" + textBprzygotowanie.Text +"', '"+ pictureBox1.ImageLocation+ "')";
             cmd.Connection = sqlConnection1;
 
             sqlConnection1.Open();

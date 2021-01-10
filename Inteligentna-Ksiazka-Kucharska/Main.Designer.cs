@@ -32,6 +32,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.przepisyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ulubioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaZakupówToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listbprzepis = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxopis = new System.Windows.Forms.TextBox();
@@ -40,11 +45,6 @@
             this.buttonedytuj = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.przepisyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ulubioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaZakupówToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -99,6 +99,49 @@
             // toolStripContainer1.TopToolStripPanel
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.przepisyToolStripMenuItem,
+            this.ulubioneToolStripMenuItem,
+            this.historiaToolStripMenuItem,
+            this.listaZakupówToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1038, 28);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // przepisyToolStripMenuItem
+            // 
+            this.przepisyToolStripMenuItem.Name = "przepisyToolStripMenuItem";
+            this.przepisyToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.przepisyToolStripMenuItem.Text = "Przepisy";
+            this.przepisyToolStripMenuItem.Click += new System.EventHandler(this.przepisyToolStripMenuItem_Click);
+            // 
+            // ulubioneToolStripMenuItem
+            // 
+            this.ulubioneToolStripMenuItem.Name = "ulubioneToolStripMenuItem";
+            this.ulubioneToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.ulubioneToolStripMenuItem.Text = "Ulubione";
+            this.ulubioneToolStripMenuItem.Click += new System.EventHandler(this.ulubioneToolStripMenuItem_Click);
+            // 
+            // historiaToolStripMenuItem
+            // 
+            this.historiaToolStripMenuItem.Name = "historiaToolStripMenuItem";
+            this.historiaToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.historiaToolStripMenuItem.Text = "Historia";
+            this.historiaToolStripMenuItem.Click += new System.EventHandler(this.historiaToolStripMenuItem_Click);
+            // 
+            // listaZakupówToolStripMenuItem
+            // 
+            this.listaZakupówToolStripMenuItem.Name = "listaZakupówToolStripMenuItem";
+            this.listaZakupówToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
+            this.listaZakupówToolStripMenuItem.Text = "Lista Zakupów";
+            this.listaZakupówToolStripMenuItem.Click += new System.EventHandler(this.listaZakupówToolStripMenuItem_Click);
             // 
             // listbprzepis
             // 
@@ -185,49 +228,6 @@
             this.txtSearch.TabIndex = 9;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // przepisyToolStripMenuItem
-            // 
-            this.przepisyToolStripMenuItem.Name = "przepisyToolStripMenuItem";
-            this.przepisyToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
-            this.przepisyToolStripMenuItem.Text = "Przepisy";
-            this.przepisyToolStripMenuItem.Click += new System.EventHandler(this.przepisyToolStripMenuItem_Click);
-            // 
-            // ulubioneToolStripMenuItem
-            // 
-            this.ulubioneToolStripMenuItem.Name = "ulubioneToolStripMenuItem";
-            this.ulubioneToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
-            this.ulubioneToolStripMenuItem.Text = "Ulubione";
-            this.ulubioneToolStripMenuItem.Click += new System.EventHandler(this.ulubioneToolStripMenuItem_Click);
-            // 
-            // historiaToolStripMenuItem
-            // 
-            this.historiaToolStripMenuItem.Name = "historiaToolStripMenuItem";
-            this.historiaToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
-            this.historiaToolStripMenuItem.Text = "Historia";
-            this.historiaToolStripMenuItem.Click += new System.EventHandler(this.historiaToolStripMenuItem_Click);
-            // 
-            // listaZakupówToolStripMenuItem
-            // 
-            this.listaZakupówToolStripMenuItem.Name = "listaZakupówToolStripMenuItem";
-            this.listaZakupówToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
-            this.listaZakupówToolStripMenuItem.Text = "Lista Zakupów";
-            this.listaZakupówToolStripMenuItem.Click += new System.EventHandler(this.listaZakupówToolStripMenuItem_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.przepisyToolStripMenuItem,
-            this.ulubioneToolStripMenuItem,
-            this.historiaToolStripMenuItem,
-            this.listaZakupówToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1038, 28);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -247,7 +247,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main";
+            this.Text = "Baza Przepisów";
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

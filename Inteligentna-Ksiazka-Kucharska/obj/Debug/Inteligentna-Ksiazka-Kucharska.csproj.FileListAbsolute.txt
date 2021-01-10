@@ -94,3 +94,22 @@ C:\Users\kmate\Desktop\inzmat\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligen
 C:\Users\kmate\Desktop\inzmat\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.pdb
 C:\Users\kmate\Desktop\inzmat\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Listazak.resources
 C:\Users\kmate\Desktop\inzmat\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Historia.resources
+C:\Users\kmate\Desktop\inzmat — kopia\Inteligentna-Ksiazka-Kucharska\bin\Debug\Przepisy.mdf
+C:\Users\kmate\Desktop\inzmat — kopia\Inteligentna-Ksiazka-Kucharska\bin\Debug\Przepisy_log.ldf
+C:\Users\kmate\Desktop\inzmat — kopia\Inteligentna-Ksiazka-Kucharska\bin\Debug\Inteligentna-Ksiazka-Kucharska.exe.config
+C:\Users\kmate\Desktop\inzmat — kopia\Inteligentna-Ksiazka-Kucharska\bin\Debug\Inteligentna-Ksiazka-Kucharska.exe
+C:\Users\kmate\Desktop\inzmat — kopia\Inteligentna-Ksiazka-Kucharska\bin\Debug\Inteligentna-Ksiazka-Kucharska.pdb
+C:\Users\kmate\Desktop\inzmat — kopia\Inteligentna-Ksiazka-Kucharska\bin\Debug\System.dll
+C:\Users\kmate\Desktop\inzmat — kopia\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Dodaj.resources
+C:\Users\kmate\Desktop\inzmat — kopia\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Edytuj.resources
+C:\Users\kmate\Desktop\inzmat — kopia\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Historia.resources
+C:\Users\kmate\Desktop\inzmat — kopia\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Main.resources
+C:\Users\kmate\Desktop\inzmat — kopia\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Properties.Resources.resources
+C:\Users\kmate\Desktop\inzmat — kopia\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Splash.resources
+C:\Users\kmate\Desktop\inzmat — kopia\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.UserControl1.resources
+C:\Users\kmate\Desktop\inzmat — kopia\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna_Ksiazka_Kucharska.Usun.resources
+C:\Users\kmate\Desktop\inzmat — kopia\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.csproj.GenerateResource.cache
+C:\Users\kmate\Desktop\inzmat — kopia\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.csproj.CoreCompileInputs.cache
+C:\Users\kmate\Desktop\inzmat — kopia\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.csproj.CopyComplete
+C:\Users\kmate\Desktop\inzmat — kopia\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.exe
+C:\Users\kmate\Desktop\inzmat — kopia\Inteligentna-Ksiazka-Kucharska\obj\Debug\Inteligentna-Ksiazka-Kucharska.pdb

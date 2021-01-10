@@ -84,12 +84,6 @@
     <Compile Include="Historia.Designer.cs">
       <DependentUpon>Historia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Listazak.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Listazak.Designer.cs">
-      <DependentUpon>Listazak.cs</DependentUpon>
-    </Compile>
     <Compile Include="PrzepisyDatabase.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -129,9 +123,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Historia.resx">
       <DependentUpon>Historia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Listazak.resx">
-      <DependentUpon>Listazak.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

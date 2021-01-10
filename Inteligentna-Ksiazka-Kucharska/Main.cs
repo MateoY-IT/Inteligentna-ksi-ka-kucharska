@@ -63,7 +63,7 @@ namespace Inteligentna_Ksiazka_Kucharska
                     if (PrzepisTable.Rows.Count != 0)
                     {
                         textBoxopis.Text = "Instrukcja: " + PrzepisTable.Rows[0]["Instrukcje"].ToString()
-                            + Environment.NewLine + "Czas przygotowania: " + PrzepisTable.Rows[0]["Czas_przygotowania"].ToString()
+                            + Environment.NewLine + "Czas przygotowania: " + PrzepisTable.Rows[0]["Czas_przygotowania"].ToString() + " Minut. " 
                             + Environment.NewLine + "Zdjecie: " + PrzepisTable.Rows[0]["Zdjecie"].ToString();
                     }
 
@@ -119,16 +119,13 @@ namespace Inteligentna_Ksiazka_Kucharska
 
         private void historiaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            /*this.Hide();
             Historia nForm = new Historia();
-            nForm.Show();
+            nForm.Show();*/
         }
 
         private void listaZakupówToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Listazak nForm = new Listazak();
-            nForm.Show();
         }
     }
 }

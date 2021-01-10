@@ -15,7 +15,7 @@ namespace Inteligentna_Ksiazka_Kucharska
     public partial class Edytuj : Form
     {
         PrzepisyDatabaseDataContext DatabaseDataContext = new PrzepisyDatabaseDataContext();
-        Przepis SelectedPrzepis;
+        Przepi SelectedPrzepis;
         SqlConnection connection;
         string connectionString;
 
@@ -47,7 +47,7 @@ namespace Inteligentna_Ksiazka_Kucharska
         }
         private void loadPrzepis()
         {
-          foreach( Przepis w in DatabaseDataContext.Przepis)
+          foreach( Przepi w in DatabaseDataContext.Przepis)
             {
                 listBoxwyswietl.Items.Add(w);
             }
@@ -84,8 +84,9 @@ namespace Inteligentna_Ksiazka_Kucharska
             if(listBoxwyswietl.SelectedItems.Count== 1)
             {
                 listBoxwyswietl.Enabled = false;
-                SelectedPrzepis = listBoxwyswietl.SelectedItem as Przepis;
+                SelectedPrzepis = listBoxwyswietl.SelectedItem as Przepi;
                 textBoxTitle.Text = SelectedPrzepis.Nazwa;
+                nczasp.Value = SelectedPrzepis.Czas_przygotowania;
                 textBprzygotowanie.Text = SelectedPrzepis.Instrukcje;
             }
         }
@@ -101,6 +102,7 @@ namespace Inteligentna_Ksiazka_Kucharska
             cmd.CommandText = "update Przepis SET " +
                 "Nazwa = '" + textBoxTitle.Text + "', " +
                 "Instrukcje = '" + textBprzygotowanie.Text + "', " +
+                "Czas_przygotowania = '" + nczasp.Value + "', " +
                 "Zdjecie = '" + pictureBox1.ImageLocation + "' " +
                 "WHERE Nazwa = '" + nazwa + "'";
             cmd.Connection = sqlConnection1;
