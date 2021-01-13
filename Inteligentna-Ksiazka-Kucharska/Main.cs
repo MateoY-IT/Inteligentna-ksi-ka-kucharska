@@ -28,19 +28,19 @@ namespace Inteligentna_Ksiazka_Kucharska
         {
             popularneprzepisy();
         }
-
+        
         public void popularneprzepisy()
         {
             using (connection = new SqlConnection(connectionString))
-            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Przepis", connection))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Przepisy", connection))
             {
-                DataTable PrzepisTable = new DataTable();
-                adapter.Fill(PrzepisTable);
+                DataTable PrzepisyTable = new DataTable();
+                adapter.Fill(PrzepisyTable);
 
                 listbprzepis.ValueMember = "ID_przepisu";
                 listbprzepis.DisplayMember = "Nazwa";
 
-                listbprzepis.DataSource = PrzepisTable;
+                listbprzepis.DataSource = PrzepisyTable;
             }
         }
 
@@ -52,22 +52,21 @@ namespace Inteligentna_Ksiazka_Kucharska
         {
 
 
-                string element = listbprzepis.GetItemText(listbprzepis.SelectedItem);
-                using (connection = new SqlConnection(connectionString))
-                using (SqlDataAdapter adapter = new SqlDataAdapter(
-                    $"SELECT * FROM Przepis WHERE ID_przepisu='{listbprzepis.SelectedValue}'",
-                    connection))
+            string element = listbprzepis.GetItemText(listbprzepis.SelectedItem);
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(
+                $"SELECT * FROM Przepisy WHERE ID_przepisu='{listbprzepis.SelectedValue}'",
+                connection))
+            {
+                DataTable PrzepisyTable = new DataTable();
+                adapter.Fill(PrzepisyTable);
+                if (PrzepisyTable.Rows.Count != 0)
                 {
-                    DataTable PrzepisTable = new DataTable();
-                    adapter.Fill(PrzepisTable);
-                    if (PrzepisTable.Rows.Count != 0)
-                    {
-                        textBoxopis.Text = "Instrukcja: " + PrzepisTable.Rows[0]["Instrukcje"].ToString()
-                            + Environment.NewLine + "Czas przygotowania: " + PrzepisTable.Rows[0]["Czas_przygotowania"].ToString() + " Minut. " 
-                            + Environment.NewLine + "Zdjecie: " + PrzepisTable.Rows[0]["Zdjecie"].ToString();
-                    }
-
+                    textBoxczas.Text = "" + PrzepisyTable.Rows[0]["Czas_przygotowania"].ToString() + " Minut. ";
+                    textBprzygotowanie.Text = "" + PrzepisyTable.Rows[0]["Instrukcje"].ToString();
                 }
+
+            }
         }
 
         private void buttondodaj_Click(object sender, EventArgs e)
@@ -97,14 +96,14 @@ namespace Inteligentna_Ksiazka_Kucharska
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             using (connection = new SqlConnection(connectionString))
-            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Przepis WHERE Nazwa Like '%" + txtSearch.Text + "%'", connection))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Przepisy WHERE Nazwa Like '%" + txtSearch.Text + "%'", connection))
             {
-                DataTable PrzepisTable = new DataTable();
-                adapter.Fill(PrzepisTable);
+                DataTable PrzepisyTable = new DataTable();
+                adapter.Fill(PrzepisyTable);
 
                 listbprzepis.ValueMember = "ID_przepisu";
                 listbprzepis.DisplayMember = "Nazwa";
-                listbprzepis.DataSource = PrzepisTable;
+                listbprzepis.DataSource = PrzepisyTable;
             }
         }
 
@@ -126,6 +125,9 @@ namespace Inteligentna_Ksiazka_Kucharska
 
         private void listaZakupówToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Listazak nForm = new Listazak();
+            nForm.Show();
         }
     }
 }

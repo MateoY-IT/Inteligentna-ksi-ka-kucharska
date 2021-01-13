@@ -14,8 +14,9 @@ namespace Inteligentna_Ksiazka_Kucharska
 {
     public partial class Edytuj : Form
     {
-        PrzepisyDatabaseDataContext DatabaseDataContext = new PrzepisyDatabaseDataContext();
-        Przepi SelectedPrzepis;
+
+        PrzepisyDataContext DatabaseDataContext = new PrzepisyDataContext();
+        Przepisy SelectedPrzepis;
         SqlConnection connection;
         string connectionString;
 
@@ -47,10 +48,49 @@ namespace Inteligentna_Ksiazka_Kucharska
         }
         private void loadPrzepis()
         {
-          foreach( Przepi w in DatabaseDataContext.Przepis)
+          foreach( Przepisy w in DatabaseDataContext.Przepisies)
             {
                 listBoxwyswietl.Items.Add(w);
             }
+        }
+
+        private void banuluj_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void listBoxwyswietl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(listBoxwyswietl.SelectedItems.Count== 1)
+            {
+                listBoxwyswietl.Enabled = false;
+                SelectedPrzepis = listBoxwyswietl.SelectedItem as Przepisy;
+                textBoxTitle.Text = SelectedPrzepis.Nazwa;
+                textBprzygotowanie.Text = SelectedPrzepis.Instrukcje;
+            }
+        }
+
+        private void bedytuj_Click(object sender, EventArgs e)
+        {
+            string nazwa = listBoxwyswietl.GetItemText(listBoxwyswietl.SelectedItem);
+            SqlConnection sqlConnection1 =
+                           new SqlConnection(connectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "update Przepisy SET " +
+                "Nazwa = '" + textBoxTitle.Text + "', " +
+                "Instrukcje = '" + textBprzygotowanie.Text + "', " +
+                "Czas_przygotowania = '" + nczasp.Value + "', " +
+                "Zdjecie = '" + pictureBox1.ImageLocation + "' " +
+                "WHERE Nazwa = '" + nazwa + "'";
+            cmd.Connection = sqlConnection1;
+
+            sqlConnection1.Open();
+            cmd.ExecuteNonQuery();
+            sqlConnection1.Close();
+
+            this.DialogResult = DialogResult.OK;
         }
 
         private void bwybierz_Click(object sender, EventArgs e)
@@ -72,46 +112,6 @@ namespace Inteligentna_Ksiazka_Kucharska
             {
                 MessageBox.Show("Błąd");
             }
-        }
-
-        private void banuluj_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void listBoxwyswietl_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(listBoxwyswietl.SelectedItems.Count== 1)
-            {
-                listBoxwyswietl.Enabled = false;
-                SelectedPrzepis = listBoxwyswietl.SelectedItem as Przepi;
-                textBoxTitle.Text = SelectedPrzepis.Nazwa;
-                nczasp.Value = SelectedPrzepis.Czas_przygotowania;
-                textBprzygotowanie.Text = SelectedPrzepis.Instrukcje;
-            }
-        }
-
-        private void bedytuj_Click(object sender, EventArgs e)
-        {
-            string nazwa = listBoxwyswietl.GetItemText(listBoxwyswietl.SelectedItem);
-            SqlConnection sqlConnection1 =
-                           new SqlConnection(connectionString);
-
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "update Przepis SET " +
-                "Nazwa = '" + textBoxTitle.Text + "', " +
-                "Instrukcje = '" + textBprzygotowanie.Text + "', " +
-                "Czas_przygotowania = '" + nczasp.Value + "', " +
-                "Zdjecie = '" + pictureBox1.ImageLocation + "' " +
-                "WHERE Nazwa = '" + nazwa + "'";
-            cmd.Connection = sqlConnection1;
-
-            sqlConnection1.Open();
-            cmd.ExecuteNonQuery();
-            sqlConnection1.Close();
-
-            this.DialogResult = DialogResult.OK;
         }
     }
 }

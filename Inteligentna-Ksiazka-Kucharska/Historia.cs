@@ -36,11 +36,9 @@ namespace Inteligentna_Ksiazka_Kucharska
 
         private void listaZakupówToolStripMenuItem_Click(object sender, EventArgs e)
         {
-        }
-
-        private void Historia_Load(object sender, EventArgs e)
-        {
-
+            this.Hide();
+            Listazak nForm = new Listazak();
+            nForm.Show();
         }
     }
 }

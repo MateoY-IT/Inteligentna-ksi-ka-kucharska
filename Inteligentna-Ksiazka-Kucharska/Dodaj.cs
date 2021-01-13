@@ -14,6 +14,7 @@ namespace Inteligentna_Ksiazka_Kucharska
 {
     public partial class Dodaj : Form
     {
+        PrzepisyDataContext DatabaseDataContext = new PrzepisyDataContext();
         SqlConnection connection;
         string connectionString;
 
@@ -26,13 +27,12 @@ namespace Inteligentna_Ksiazka_Kucharska
 
         private void bdodaj_Click(object sender, EventArgs e)
         {
-
            SqlConnection sqlConnection1 =
                             new SqlConnection(connectionString);
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO Przepis (Nazwa, Czas_przygotowania, Instrukcje, Zdjecie) VALUES ('"+ textBtytul.Text + "', '" + nczasp.Value + "', '" + textBprzygotowanie.Text +"', '"+ pictureBox1.ImageLocation+ "')";
+            cmd.CommandText = "INSERT INTO Przepisy (Nazwa, Czas_przygotowania, Instrukcje, Zdjecie) VALUES ('"+ textBtytul.Text + "', '"+ nczasp.Value + "', '" + textBprzygotowanie.Text +"', '"+ pictureBox1.ImageLocation+ "')";
             cmd.Connection = sqlConnection1;
 
             sqlConnection1.Open();
@@ -41,6 +41,7 @@ namespace Inteligentna_Ksiazka_Kucharska
 
             this.DialogResult = DialogResult.OK;
         }
+
         public void popularneprodukty()
         {
             using (connection = new SqlConnection(connectionString))
@@ -49,15 +50,28 @@ namespace Inteligentna_Ksiazka_Kucharska
                 DataTable ProduktTable = new DataTable();
                 adapter.Fill(ProduktTable);
 
-                listBskladniki.ValueMember = "ID_produktu";
-                listBskladniki.DisplayMember = "Nazwa";
+                cLBSkladniki.ValueMember = "ID_produktu";
+                cLBSkladniki.DisplayMember = "Nazwa";
 
-                listBskladniki.DataSource = ProduktTable;
+                cLBSkladniki.DataSource = ProduktTable;
             }
         }
+
         private void banuluj_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+
+        private void Dodaj_Load(object sender, EventArgs e)
+        {
+            popularneprodukty();
+            cLBSkladniki.DisplayMember = "Nazwa";
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void bwybierz_Click(object sender, EventArgs e)
@@ -81,14 +95,5 @@ namespace Inteligentna_Ksiazka_Kucharska
             }
         }
 
-        private void Dodaj_Load(object sender, EventArgs e)
-        {
-            popularneprodukty();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

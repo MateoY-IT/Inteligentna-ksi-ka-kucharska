@@ -13,6 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>publikuj\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,7 +28,6 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -84,10 +84,16 @@
     <Compile Include="Historia.Designer.cs">
       <DependentUpon>Historia.cs</DependentUpon>
     </Compile>
-    <Compile Include="PrzepisyDatabase.designer.cs">
+    <Compile Include="Listazak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listazak.Designer.cs">
+      <DependentUpon>Listazak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Przepisy.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PrzepisyDatabase.dbml</DependentUpon>
+      <DependentUpon>Przepisy.dbml</DependentUpon>
     </Compile>
     <Compile Include="Usun.cs">
       <SubType>Form</SubType>
@@ -124,6 +130,9 @@
     <EmbeddedResource Include="Historia.resx">
       <DependentUpon>Historia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listazak.resx">
+      <DependentUpon>Listazak.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,13 +164,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="PrzepisyDatabase.dbml">
+    <None Include="Przepisy.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>PrzepisyDatabase.designer.cs</LastGenOutput>
+      <LastGenOutput>Przepisy.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="PrzepisyDatabase.dbml.layout">
-      <DependentUpon>PrzepisyDatabase.dbml</DependentUpon>
+    <None Include="Przepisy.dbml.layout">
+      <DependentUpon>Przepisy.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -14,7 +14,7 @@ namespace Inteligentna_Ksiazka_Kucharska
 {
     public partial class Usun : Form
     {
-        PrzepisyDatabaseDataContext PrzepisyDC = new PrzepisyDatabaseDataContext();
+        PrzepisyDataContext PrzepisyDC = new PrzepisyDataContext();
         SqlConnection connection;
         string connectionString;
         public Usun()
@@ -31,7 +31,7 @@ namespace Inteligentna_Ksiazka_Kucharska
         public void popularneprzepisy()
         {
             using (connection = new SqlConnection(connectionString))
-            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Przepis", connection))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Przepisy", connection))
             {
                 DataTable PrzepisTable = new DataTable();
                 adapter.Fill(PrzepisTable);
@@ -55,7 +55,7 @@ namespace Inteligentna_Ksiazka_Kucharska
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "DELETE FROM Przepis WHERE Nazwa='" + nazwa + "'";
+            cmd.CommandText = "DELETE FROM Przepisy WHERE Nazwa='" + nazwa + "'";
             cmd.Connection = sqlConnection1;
 
             sqlConnection1.Open();
