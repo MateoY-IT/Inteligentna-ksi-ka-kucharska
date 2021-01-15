@@ -64,12 +64,12 @@ namespace Inteligentna_Ksiazka_Kucharska
         {
             if(listBoxwyswietl.SelectedItems.Count== 1)
             {
-                listBoxwyswietl.Enabled = false;
+                //listBoxwyswietl.Enabled = false;
                 SelectedPrzepis = listBoxwyswietl.SelectedItem as Przepisy;
                 textBoxTitle.Text = SelectedPrzepis.Nazwa;
                 textBprzygotowanie.Text = SelectedPrzepis.Instrukcje;
                 pictureBox1.ImageLocation = SelectedPrzepis.Zdjecie.ToString();
-                //nczasp.Value = SelectedPrzepis.Czas_przygotowania.HasValue;
+                nczasp.Value = SelectedPrzepis.Czas_przygotowania.Value;
             }
         }
 
