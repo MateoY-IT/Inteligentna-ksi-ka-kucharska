@@ -207,7 +207,7 @@ namespace Inteligentna_Ksiazka_Kucharska
             this.CLBSkladniki.FormattingEnabled = true;
             this.CLBSkladniki.Location = new System.Drawing.Point(274, 37);
             this.CLBSkladniki.Name = "CLBSkladniki";
-            this.CLBSkladniki.Size = new System.Drawing.Size(340, 89);
+            this.CLBSkladniki.Size = new System.Drawing.Size(493, 89);
             this.CLBSkladniki.TabIndex = 17;
             // 
             // Edytuj
