@@ -37,13 +37,12 @@ namespace Inteligentna_Ksiazka_Kucharska
                 DataTable PrzepisyTable = new DataTable();
                 adapter.Fill(PrzepisyTable);
 
-                listbprzepis.ValueMember = "ID_przepisu";
+                listbprzepis.ValueMember = "Id_przepisu";
                 listbprzepis.DisplayMember = "Nazwa";
 
                 listbprzepis.DataSource = PrzepisyTable;
             }
         }
-
         private void listbprzepis_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
@@ -64,6 +63,8 @@ namespace Inteligentna_Ksiazka_Kucharska
                 {
                     textBoxczas.Text = "" + PrzepisyTable.Rows[0]["Czas_przygotowania"].ToString() + " Minut. ";
                     textBprzygotowanie.Text = "" + PrzepisyTable.Rows[0]["Instrukcje"].ToString();
+                    labelSkladniki.Text = PrzepisyTable.Rows[0]["Skladniki"].ToString();
+                    pictureBox1.ImageLocation = PrzepisyTable.Rows[0]["Zdjecie"].ToString();
                 }
 
             }

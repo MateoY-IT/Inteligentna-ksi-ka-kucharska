@@ -31,6 +31,7 @@ namespace Inteligentna_Ksiazka_Kucharska
             loadPrzepis();
             listBoxwyswietl.DisplayMember = "Nazwa";
             popularneprodukty();
+            CLBSkladniki.DisplayMember = "Nazwa";
         }
         public void popularneprodukty()
         {
@@ -40,10 +41,10 @@ namespace Inteligentna_Ksiazka_Kucharska
                 DataTable ProduktTable = new DataTable();
                 adapter.Fill(ProduktTable);
 
-                listBskladniki.ValueMember = "ID_produktu";
-                listBskladniki.DisplayMember = "Nazwa";
+                CLBSkladniki.ValueMember = "Id_produktu";
+                CLBSkladniki.DisplayMember = "Nazwa";
 
-                listBskladniki.DataSource = ProduktTable;
+                CLBSkladniki.DataSource = ProduktTable;
             }
         }
         private void loadPrzepis()
@@ -67,6 +68,8 @@ namespace Inteligentna_Ksiazka_Kucharska
                 SelectedPrzepis = listBoxwyswietl.SelectedItem as Przepisy;
                 textBoxTitle.Text = SelectedPrzepis.Nazwa;
                 textBprzygotowanie.Text = SelectedPrzepis.Instrukcje;
+                pictureBox1.ImageLocation = SelectedPrzepis.Zdjecie.ToString();
+                //nczasp.Value = SelectedPrzepis.Czas_przygotowania.HasValue;
             }
         }
 
@@ -78,8 +81,30 @@ namespace Inteligentna_Ksiazka_Kucharska
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
+
+            List<string> zaznaczoneProduktyLista = new List<string>();
+
+            foreach (DataRowView indexChecked in CLBSkladniki.CheckedItems)
+            {
+                zaznaczoneProduktyLista.Add(indexChecked.Row.ItemArray[1].ToString());
+            }
+
+            string[] zaznaczoneProdukty = zaznaczoneProduktyLista.ToArray();
+
+            string produktyValue = "";
+
+            foreach (string produkt in zaznaczoneProdukty)
+            {
+                produktyValue += produkt;
+                if (produkt != zaznaczoneProdukty.Last())
+                {
+                    produktyValue += ", ";
+                }
+            }
+
             cmd.CommandText = "update Przepisy SET " +
                 "Nazwa = '" + textBoxTitle.Text + "', " +
+                "Skladniki = '" + produktyValue + "', " +
                 "Instrukcje = '" + textBprzygotowanie.Text + "', " +
                 "Czas_przygotowania = '" + nczasp.Value + "', " +
                 "Zdjecie = '" + pictureBox1.ImageLocation + "' " +

@@ -33,12 +33,12 @@ namespace Inteligentna_Ksiazka_Kucharska
     partial void InsertSklad(Sklad instance);
     partial void UpdateSklad(Sklad instance);
     partial void DeleteSklad(Sklad instance);
-    partial void InsertPrzepisy(Przepisy instance);
-    partial void UpdatePrzepisy(Przepisy instance);
-    partial void DeletePrzepisy(Przepisy instance);
     partial void InsertProduktLista(ProduktLista instance);
     partial void UpdateProduktLista(ProduktLista instance);
     partial void DeleteProduktLista(ProduktLista instance);
+    partial void InsertPrzepisy(Przepisy instance);
+    partial void UpdatePrzepisy(Przepisy instance);
+    partial void DeletePrzepisy(Przepisy instance);
     partial void InsertProdukt(Produkt instance);
     partial void UpdateProdukt(Produkt instance);
     partial void DeleteProdukt(Produkt instance);
@@ -48,7 +48,7 @@ namespace Inteligentna_Ksiazka_Kucharska
     #endregion
 		
 		public PrzepisyDataContext() : 
-				base(global::Inteligentna_Ksiazka_Kucharska.Properties.Settings.Default.PrzepisyConnectionString1, mappingSource)
+				base(global::Inteligentna_Ksiazka_Kucharska.Properties.Settings.Default.PrzepisyConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -85,19 +85,19 @@ namespace Inteligentna_Ksiazka_Kucharska
 			}
 		}
 		
-		public System.Data.Linq.Table<Przepisy> Przepisies
-		{
-			get
-			{
-				return this.GetTable<Przepisy>();
-			}
-		}
-		
 		public System.Data.Linq.Table<ProduktLista> ProduktListas
 		{
 			get
 			{
 				return this.GetTable<ProduktLista>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Przepisy> Przepisies
+		{
+			get
+			{
+				return this.GetTable<Przepisy>();
 			}
 		}
 		
@@ -334,192 +334,6 @@ namespace Inteligentna_Ksiazka_Kucharska
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Przepisy")]
-	public partial class Przepisy : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id_przepisu;
-		
-		private string _Nazwa;
-		
-		private System.Nullable<int> _Czas_przygotowania;
-		
-		private string _Instrukcje;
-		
-		private System.Data.Linq.Binary _Zdjecie;
-		
-		private EntitySet<Sklad> _Sklads;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnId_przepisuChanging(int value);
-    partial void OnId_przepisuChanged();
-    partial void OnNazwaChanging(string value);
-    partial void OnNazwaChanged();
-    partial void OnCzas_przygotowaniaChanging(System.Nullable<int> value);
-    partial void OnCzas_przygotowaniaChanged();
-    partial void OnInstrukcjeChanging(string value);
-    partial void OnInstrukcjeChanged();
-    partial void OnZdjecieChanging(System.Data.Linq.Binary value);
-    partial void OnZdjecieChanged();
-    #endregion
-		
-		public Przepisy()
-		{
-			this._Sklads = new EntitySet<Sklad>(new Action<Sklad>(this.attach_Sklads), new Action<Sklad>(this.detach_Sklads));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_przepisu", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id_przepisu
-		{
-			get
-			{
-				return this._Id_przepisu;
-			}
-			set
-			{
-				if ((this._Id_przepisu != value))
-				{
-					this.OnId_przepisuChanging(value);
-					this.SendPropertyChanging();
-					this._Id_przepisu = value;
-					this.SendPropertyChanged("Id_przepisu");
-					this.OnId_przepisuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nazwa", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string Nazwa
-		{
-			get
-			{
-				return this._Nazwa;
-			}
-			set
-			{
-				if ((this._Nazwa != value))
-				{
-					this.OnNazwaChanging(value);
-					this.SendPropertyChanging();
-					this._Nazwa = value;
-					this.SendPropertyChanged("Nazwa");
-					this.OnNazwaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Czas_przygotowania", DbType="Int")]
-		public System.Nullable<int> Czas_przygotowania
-		{
-			get
-			{
-				return this._Czas_przygotowania;
-			}
-			set
-			{
-				if ((this._Czas_przygotowania != value))
-				{
-					this.OnCzas_przygotowaniaChanging(value);
-					this.SendPropertyChanging();
-					this._Czas_przygotowania = value;
-					this.SendPropertyChanged("Czas_przygotowania");
-					this.OnCzas_przygotowaniaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Instrukcje", DbType="VarChar(80)")]
-		public string Instrukcje
-		{
-			get
-			{
-				return this._Instrukcje;
-			}
-			set
-			{
-				if ((this._Instrukcje != value))
-				{
-					this.OnInstrukcjeChanging(value);
-					this.SendPropertyChanging();
-					this._Instrukcje = value;
-					this.SendPropertyChanged("Instrukcje");
-					this.OnInstrukcjeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zdjecie", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary Zdjecie
-		{
-			get
-			{
-				return this._Zdjecie;
-			}
-			set
-			{
-				if ((this._Zdjecie != value))
-				{
-					this.OnZdjecieChanging(value);
-					this.SendPropertyChanging();
-					this._Zdjecie = value;
-					this.SendPropertyChanged("Zdjecie");
-					this.OnZdjecieChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Przepisy_Sklad", Storage="_Sklads", ThisKey="Id_przepisu", OtherKey="Id_przepisu")]
-		public EntitySet<Sklad> Sklads
-		{
-			get
-			{
-				return this._Sklads;
-			}
-			set
-			{
-				this._Sklads.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Sklads(Sklad entity)
-		{
-			this.SendPropertyChanging();
-			entity.Przepisy = this;
-		}
-		
-		private void detach_Sklads(Sklad entity)
-		{
-			this.SendPropertyChanging();
-			entity.Przepisy = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ProduktLista")]
 	public partial class ProduktLista : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -709,6 +523,216 @@ namespace Inteligentna_Ksiazka_Kucharska
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Przepisy")]
+	public partial class Przepisy : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id_przepisu;
+		
+		private string _Nazwa;
+		
+		private System.Nullable<int> _Czas_przygotowania;
+		
+		private string _Instrukcje;
+		
+		private string _Zdjecie;
+		
+		private string _Skladniki;
+		
+		private EntitySet<Sklad> _Sklads;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnId_przepisuChanging(int value);
+    partial void OnId_przepisuChanged();
+    partial void OnNazwaChanging(string value);
+    partial void OnNazwaChanged();
+    partial void OnCzas_przygotowaniaChanging(System.Nullable<int> value);
+    partial void OnCzas_przygotowaniaChanged();
+    partial void OnInstrukcjeChanging(string value);
+    partial void OnInstrukcjeChanged();
+    partial void OnZdjecieChanging(string value);
+    partial void OnZdjecieChanged();
+    partial void OnSkladnikiChanging(string value);
+    partial void OnSkladnikiChanged();
+    #endregion
+		
+		public Przepisy()
+		{
+			this._Sklads = new EntitySet<Sklad>(new Action<Sklad>(this.attach_Sklads), new Action<Sklad>(this.detach_Sklads));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_przepisu", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id_przepisu
+		{
+			get
+			{
+				return this._Id_przepisu;
+			}
+			set
+			{
+				if ((this._Id_przepisu != value))
+				{
+					this.OnId_przepisuChanging(value);
+					this.SendPropertyChanging();
+					this._Id_przepisu = value;
+					this.SendPropertyChanged("Id_przepisu");
+					this.OnId_przepisuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nazwa", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string Nazwa
+		{
+			get
+			{
+				return this._Nazwa;
+			}
+			set
+			{
+				if ((this._Nazwa != value))
+				{
+					this.OnNazwaChanging(value);
+					this.SendPropertyChanging();
+					this._Nazwa = value;
+					this.SendPropertyChanged("Nazwa");
+					this.OnNazwaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Czas_przygotowania", DbType="Int")]
+		public System.Nullable<int> Czas_przygotowania
+		{
+			get
+			{
+				return this._Czas_przygotowania;
+			}
+			set
+			{
+				if ((this._Czas_przygotowania != value))
+				{
+					this.OnCzas_przygotowaniaChanging(value);
+					this.SendPropertyChanging();
+					this._Czas_przygotowania = value;
+					this.SendPropertyChanged("Czas_przygotowania");
+					this.OnCzas_przygotowaniaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Instrukcje", DbType="VarChar(80)")]
+		public string Instrukcje
+		{
+			get
+			{
+				return this._Instrukcje;
+			}
+			set
+			{
+				if ((this._Instrukcje != value))
+				{
+					this.OnInstrukcjeChanging(value);
+					this.SendPropertyChanging();
+					this._Instrukcje = value;
+					this.SendPropertyChanged("Instrukcje");
+					this.OnInstrukcjeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zdjecie", DbType="VarChar(MAX)")]
+		public string Zdjecie
+		{
+			get
+			{
+				return this._Zdjecie;
+			}
+			set
+			{
+				if ((this._Zdjecie != value))
+				{
+					this.OnZdjecieChanging(value);
+					this.SendPropertyChanging();
+					this._Zdjecie = value;
+					this.SendPropertyChanged("Zdjecie");
+					this.OnZdjecieChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Skladniki", DbType="VarChar(MAX)")]
+		public string Skladniki
+		{
+			get
+			{
+				return this._Skladniki;
+			}
+			set
+			{
+				if ((this._Skladniki != value))
+				{
+					this.OnSkladnikiChanging(value);
+					this.SendPropertyChanging();
+					this._Skladniki = value;
+					this.SendPropertyChanged("Skladniki");
+					this.OnSkladnikiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Przepisy_Sklad", Storage="_Sklads", ThisKey="Id_przepisu", OtherKey="Id_przepisu")]
+		public EntitySet<Sklad> Sklads
+		{
+			get
+			{
+				return this._Sklads;
+			}
+			set
+			{
+				this._Sklads.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Sklads(Sklad entity)
+		{
+			this.SendPropertyChanging();
+			entity.Przepisy = this;
+		}
+		
+		private void detach_Sklads(Sklad entity)
+		{
+			this.SendPropertyChanging();
+			entity.Przepisy = null;
 		}
 	}
 	

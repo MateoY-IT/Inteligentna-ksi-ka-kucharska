@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Inteligentna_Ksiazka_Kucharska
 {
@@ -27,12 +28,32 @@ namespace Inteligentna_Ksiazka_Kucharska
 
         private void bdodaj_Click(object sender, EventArgs e)
         {
-           SqlConnection sqlConnection1 =
-                            new SqlConnection(connectionString);
+            SqlConnection sqlConnection1 =
+                             new SqlConnection(connectionString);
+
+            List<string> zaznaczoneProduktyLista = new List<string>();
+
+            foreach (DataRowView indexChecked in cLBSkladniki.CheckedItems)
+            {
+                zaznaczoneProduktyLista.Add(indexChecked.Row.ItemArray[1].ToString());
+            }
+
+            string[] zaznaczoneProdukty = zaznaczoneProduktyLista.ToArray();
+
+            string produktyValue = "";
+
+            foreach (string produkt in zaznaczoneProdukty)
+            {
+                produktyValue += produkt;
+                if (produkt != zaznaczoneProdukty.Last())
+                {
+                    produktyValue += ", ";
+                }
+            }
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO Przepisy (Nazwa, Czas_przygotowania, Instrukcje, Zdjecie) VALUES ('"+ textBtytul.Text + "', '"+ nczasp.Value + "', '" + textBprzygotowanie.Text +"', '"+ pictureBox1.ImageLocation+ "')";
+            cmd.CommandText = "INSERT INTO Przepisy (Nazwa, Skladniki, Czas_przygotowania, Instrukcje, Zdjecie) VALUES ('" + textBtytul.Text + "', '" + produktyValue + "', '" + nczasp.Value + "', '" + textBprzygotowanie.Text + "', '" + pictureBox1.ImageLocation + "')";
             cmd.Connection = sqlConnection1;
 
             sqlConnection1.Open();
@@ -86,6 +107,7 @@ namespace Inteligentna_Ksiazka_Kucharska
                     lokalizacjaobrazu = dialog.FileName;
 
                     pictureBox1.ImageLocation = lokalizacjaobrazu;
+
                 }
 
             }
@@ -94,6 +116,5 @@ namespace Inteligentna_Ksiazka_Kucharska
                 MessageBox.Show("Błąd");
             }
         }
-
     }
 }

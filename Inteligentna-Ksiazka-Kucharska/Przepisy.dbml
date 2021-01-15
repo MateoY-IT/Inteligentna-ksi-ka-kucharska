@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Przepisy" Class="PrzepisyDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Przepisy.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="Inteligentna_Ksiazka_Kucharska.Properties.Settings" SettingsPropertyName="PrzepisyConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Przepisy.mdf;Integrated Security=True" SettingsObjectName="Inteligentna_Ksiazka_Kucharska.Properties.Settings" SettingsPropertyName="PrzepisyConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Sklad" Member="Sklads">
     <Type Name="Sklad">
       <Column Name="sklad_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -10,16 +10,6 @@
       <Association Name="Produkt_Sklad" Member="Produkt" ThisKey="Id_produktu" OtherKey="Id_produktu" Type="Produkt" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Przepisy" Member="Przepisies">
-    <Type Name="Przepisy">
-      <Column Name="Id_przepisu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Nazwa" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="Czas_przygotowania" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Instrukcje" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
-      <Column Name="Zdjecie" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
-      <Association Name="Przepisy_Sklad" Member="Sklads" ThisKey="Id_przepisu" OtherKey="Id_przepisu" Type="Sklad" />
-    </Type>
-  </Table>
   <Table Name="dbo.ProduktLista" Member="ProduktListas">
     <Type Name="ProduktLista">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -27,6 +17,17 @@
       <Column Name="lista_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Produkt_ProduktLista" Member="Produkt" ThisKey="Id_produktu" OtherKey="Id_produktu" Type="Produkt" IsForeignKey="true" />
       <Association Name="Lista_ProduktLista" Member="Lista" ThisKey="lista_ID" OtherKey="lista_ID" Type="Lista" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Przepisy" Member="Przepisies">
+    <Type Name="Przepisy">
+      <Column Name="Id_przepisu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nazwa" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Czas_przygotowania" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Instrukcje" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Zdjecie" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Skladniki" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Przepisy_Sklad" Member="Sklads" ThisKey="Id_przepisu" OtherKey="Id_przepisu" Type="Sklad" />
     </Type>
   </Table>
   <Table Name="dbo.Produkt" Member="Produkts">

@@ -34,7 +34,6 @@ namespace Inteligentna_Ksiazka_Kucharska
             this.banuluj = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBprzygotowanie = new System.Windows.Forms.TextBox();
-            this.listBskladniki = new System.Windows.Forms.ListBox();
             this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,6 +43,7 @@ namespace Inteligentna_Ksiazka_Kucharska
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bwybierz = new System.Windows.Forms.Button();
+            this.CLBSkladniki = new System.Windows.Forms.CheckedListBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nczasp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -89,7 +89,6 @@ namespace Inteligentna_Ksiazka_Kucharska
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 148F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.43323F));
             this.tableLayoutPanel1.Controls.Add(this.textBprzygotowanie, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.listBskladniki, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBoxTitle, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
@@ -99,6 +98,7 @@ namespace Inteligentna_Ksiazka_Kucharska
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.bwybierz, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.CLBSkladniki, 2, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(502, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -119,16 +119,6 @@ namespace Inteligentna_Ksiazka_Kucharska
             this.textBprzygotowanie.Name = "textBprzygotowanie";
             this.textBprzygotowanie.Size = new System.Drawing.Size(495, 148);
             this.textBprzygotowanie.TabIndex = 11;
-            // 
-            // listBskladniki
-            // 
-            this.listBskladniki.FormattingEnabled = true;
-            this.listBskladniki.ItemHeight = 16;
-            this.listBskladniki.Location = new System.Drawing.Point(275, 38);
-            this.listBskladniki.Margin = new System.Windows.Forms.Padding(4);
-            this.listBskladniki.Name = "listBskladniki";
-            this.listBskladniki.Size = new System.Drawing.Size(495, 84);
-            this.listBskladniki.TabIndex = 14;
             // 
             // textBoxTitle
             // 
@@ -212,6 +202,14 @@ namespace Inteligentna_Ksiazka_Kucharska
             this.bwybierz.UseVisualStyleBackColor = true;
             this.bwybierz.Click += new System.EventHandler(this.bwybierz_Click);
             // 
+            // CLBSkladniki
+            // 
+            this.CLBSkladniki.FormattingEnabled = true;
+            this.CLBSkladniki.Location = new System.Drawing.Point(274, 37);
+            this.CLBSkladniki.Name = "CLBSkladniki";
+            this.CLBSkladniki.Size = new System.Drawing.Size(340, 89);
+            this.CLBSkladniki.TabIndex = 17;
+            // 
             // Edytuj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -239,7 +237,6 @@ namespace Inteligentna_Ksiazka_Kucharska
         private System.Windows.Forms.Button banuluj;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox textBprzygotowanie;
-        private System.Windows.Forms.ListBox listBskladniki;
         private System.Windows.Forms.TextBox textBoxTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -249,5 +246,6 @@ namespace Inteligentna_Ksiazka_Kucharska
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button bwybierz;
+        private System.Windows.Forms.CheckedListBox CLBSkladniki;
     }
 }
